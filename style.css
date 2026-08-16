@@ -1,0 +1,466 @@
+/* ===== สื่อการเรียนรู้ ป.3 หน่วยที่ 4 แรงในชีวิตประจำวัน ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&family=Mali:wght@500;700&display=swap');
+
+:root {
+  --green-900: #1b5e20;
+  --green-700: #2e7d32;
+  --green-500: #43a047;
+  --green-100: #e8f5e9;
+  --blue-700: #1565c0;
+  --blue-500: #2196f3;
+  --blue-100: #e3f2fd;
+  --orange: #f57c00;
+  --yellow: #fff9c4;
+  --pink: #fce4ec;
+  --purple: #7b1fa2;
+  --red: #d32f2f;
+  --ink: #263238;
+  --muted: #607d8b;
+  --card: #ffffff;
+  --radius: 18px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, .09);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+  font-size: 19px;
+  line-height: 1.85;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, #e8f5e9 0, transparent 42%),
+    radial-gradient(circle at 88% 12%, #e3f2fd 0, transparent 42%),
+    radial-gradient(circle at 50% 100%, #fff8e1 0, transparent 45%),
+    #fafdff;
+  background-attachment: fixed;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 18px 80px;
+}
+
+/* ---------- Header ---------- */
+.site-head {
+  background: linear-gradient(135deg, var(--green-700), var(--green-500));
+  color: #fff;
+  padding: 26px 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.site-head .unit {
+  display: inline-block;
+  background: rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  padding: 4px 16px;
+  font-size: 15px;
+  letter-spacing: .5px;
+}
+.site-head h1 {
+  font-family: 'Mali', 'Sarabun', sans-serif;
+  margin: 10px 0 4px;
+  font-size: 30px;
+  line-height: 1.5;
+}
+.site-head p { margin: 0; opacity: .93; font-size: 17px; }
+
+/* ---------- Nav ---------- */
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+.crumb a {
+  color: var(--green-700);
+  text-decoration: none;
+  background: #fff;
+  border: 2px solid var(--green-100);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-weight: 600;
+}
+.crumb a:hover { background: var(--green-100); }
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+  margin-bottom: 22px;
+  border: 1px solid #eef3f6;
+}
+.card h2 {
+  font-family: 'Mali', 'Sarabun', sans-serif;
+  color: var(--green-700);
+  margin: 0 0 6px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card h3 {
+  font-family: 'Mali', 'Sarabun', sans-serif;
+  color: var(--blue-700);
+  font-size: 21px;
+  margin: 22px 0 8px;
+}
+
+/* ---------- Menu (index) ---------- */
+.menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.menu a {
+  display: block;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  text-decoration: none;
+  color: var(--ink);
+  border-top: 7px solid var(--green-500);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.menu a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0, 0, 0, .14); }
+.menu a .ico { font-size: 40px; display: block; }
+.menu a b {
+  font-family: 'Mali', 'Sarabun', sans-serif;
+  display: block;
+  font-size: 21px;
+  color: var(--green-900);
+  margin: 8px 0 4px;
+}
+.menu a span { color: var(--muted); font-size: 16px; }
+.menu a.b2 { border-top-color: var(--blue-500); }
+.menu a.b2 b { color: var(--blue-700); }
+.menu a.b3 { border-top-color: var(--orange); }
+.menu a.b3 b { color: var(--orange); }
+.menu a.b4 { border-top-color: var(--purple); }
+.menu a.b4 b { color: var(--purple); }
+
+/* ---------- Grid of concept boxes ---------- */
+.grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 12px; }
+.box {
+  background: var(--green-100);
+  border: 2px solid #c8e6c9;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+.box .emo { font-size: 38px; }
+.box b { display: block; color: var(--green-900); font-size: 18px; margin: 6px 0; font-family: 'Mali', sans-serif; }
+.box p { margin: 0; font-size: 16px; line-height: 1.7; }
+.box.blue { background: var(--blue-100); border-color: #bbdefb; }
+.box.blue b { color: var(--blue-700); }
+.box.yellow { background: var(--yellow); border-color: #fff59d; }
+.box.yellow b { color: #ef6c00; }
+.box.pink { background: var(--pink); border-color: #f8bbd0; }
+.box.pink b { color: #ad1457; }
+
+/* ---------- Two-column compare ---------- */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+
+/* ---------- Table ---------- */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 17px; }
+th, td { border: 2px solid #cfd8dc; padding: 10px 12px; text-align: left; vertical-align: top; }
+th { background: #cfd8dc; color: #37474f; font-weight: 700; }
+tbody tr:nth-child(even) td { background: #f7fafc; }
+
+/* ---------- Callouts ---------- */
+.note {
+  background: var(--yellow);
+  border-left: 8px solid var(--orange);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+.note b { color: #e65100; }
+.tip {
+  background: var(--blue-100);
+  border-left: 8px solid var(--blue-500);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+.tip b { color: var(--blue-700); }
+
+/* ---------- Quiz ---------- */
+.q { border: 2px solid #e0e0e0; border-radius: 16px; padding: 18px 20px; margin-bottom: 18px; background: #fff; }
+.q .qnum {
+  display: inline-block;
+  background: var(--green-500);
+  color: #fff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.q .qtext { font-weight: 600; font-size: 19px; }
+.opts { margin-top: 12px; display: grid; gap: 10px; }
+.opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  background: #f5f7f9;
+  border: 2px solid #dfe6ea;
+  border-radius: 12px;
+  padding: 11px 16px;
+  cursor: pointer;
+  transition: .12s;
+  color: var(--ink);
+}
+.opt:hover:not(:disabled) { background: var(--green-100); border-color: var(--green-500); }
+.opt:disabled { cursor: default; }
+.opt.correct { background: #c8e6c9; border-color: var(--green-700); font-weight: 700; }
+.opt.wrong { background: #ffcdd2; border-color: var(--red); }
+.fb { margin-top: 12px; padding: 12px 16px; border-radius: 12px; display: none; font-size: 17px; }
+.fb.show { display: block; }
+.fb.ok { background: #e8f5e9; border-left: 6px solid var(--green-700); }
+.fb.no { background: #ffebee; border-left: 6px solid var(--red); }
+
+/* ---------- Fill in the blank ---------- */
+.fill input[type=text] {
+  font-family: inherit;
+  font-size: 18px;
+  padding: 8px 12px;
+  border: 2px solid #dfe6ea;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+.btn {
+  font-family: 'Mali', 'Sarabun', sans-serif;
+  font-size: 17px;
+  background: var(--green-700);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 24px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn:hover { background: var(--green-900); }
+.btn.ghost { background: #fff; color: var(--green-700); border: 2px solid var(--green-700); }
+
+/* ---------- Score ---------- */
+.score {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--green-700);
+  color: #fff;
+  border-radius: 0 0 16px 16px;
+  padding: 12px 20px;
+  font-family: 'Mali', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+/* ---------- Worksheet lines ---------- */
+.write-line {
+  border-bottom: 2px dotted #90a4ae;
+  min-height: 34px;
+  margin: 8px 0;
+}
+.answer {
+  display: none;
+  background: #e8f5e9;
+  border-left: 6px solid var(--green-700);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  color: var(--green-900);
+  font-weight: 600;
+}
+.answer.show { display: block; }
+
+/* ---------- Footer ---------- */
+.foot { text-align: center; color: var(--muted); font-size: 15px; margin-top: 30px; }
+
+/* ---------- Pink theme (Social Studies) ---------- */
+body.pink {
+  background:
+    radial-gradient(circle at 12% 8%, #fce4ec 0, transparent 42%),
+    radial-gradient(circle at 88% 12%, #f8bbd0 0, transparent 40%),
+    radial-gradient(circle at 50% 100%, #fff3e0 0, transparent 45%),
+    #fffafc;
+  background-attachment: fixed;
+}
+body.pink .site-head { background: linear-gradient(135deg, #ec407a, #f06292); }
+body.pink .card h2 { color: #c2185b; }
+body.pink .card h3 { color: #1a3a7a; }
+body.pink .crumb a { color: #c2185b; border-color: #fce4ec; }
+body.pink .crumb a:hover { background: #fce4ec; }
+body.pink .btn { background: #c2185b; }
+body.pink .btn:hover { background: #880e4f; }
+body.pink .btn.ghost { background: #fff; color: #c2185b; border-color: #c2185b; }
+body.pink .score { background: #c2185b; }
+body.pink .q .qnum { background: #ec407a; }
+body.pink .opt:hover:not(:disabled) { background: #fce4ec; border-color: #ec407a; }
+body.pink .menu a { border-top-color: #ec407a; }
+body.pink .menu a b { color: #c2185b; }
+body.pink .box { background: #fce4ec; border-color: #f8bbd0; }
+body.pink .box b { color: #c2185b; }
+body.pink .answer { background: #fce4ec; border-left-color: #c2185b; color: #880e4f; }
+
+/* Country cards */
+.countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 14px; }
+.country {
+  background: #fff;
+  border: 2px solid #f3e5f5;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+.country .flag { font-size: 46px; line-height: 1.2; }
+.country .name {
+  font-family: 'Mali', sans-serif;
+  font-size: 20px;
+  color: #c2185b;
+  margin: 4px 0 10px;
+  font-weight: 700;
+}
+.country dl { margin: 0; font-size: 16px; text-align: left; }
+.country dt { color: #78909c; font-size: 14px; margin-top: 6px; }
+.country dd { margin: 0; font-weight: 700; color: #263238; }
+.th { color: #78909c; font-size: 15px; font-weight: 400; }
+
+/* Match exercise */
+.match { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.match .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: #fafafa; border: 2px solid #eee; border-radius: 12px; padding: 10px 14px; }
+.match .row b { min-width: 30px; }
+.match select {
+  font-family: inherit; font-size: 17px; padding: 7px 10px;
+  border: 2px solid #dfe6ea; border-radius: 10px; background: #fff; flex: 1; min-width: 170px;
+}
+.match .row.right { background: #c8e6c9; border-color: #2e7d32; }
+.match .row.miss { background: #ffcdd2; border-color: #d32f2f; }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: #fff; }
+  .crumb, .btn, .score { display: none; }
+  .card { box-shadow: none; break-inside: avoid; }
+}
+
+/* ===================== MATH THEME (blue/green farm) ===================== */
+body.math {
+  background:
+    radial-gradient(circle at 10% 6%, #e1f5fe 0, transparent 42%),
+    radial-gradient(circle at 90% 10%, #e8f5e9 0, transparent 40%),
+    radial-gradient(circle at 50% 100%, #fff8e1 0, transparent 45%),
+    #f7fdff;
+  background-attachment: fixed;
+}
+body.math .site-head { background: linear-gradient(135deg, #0277bd, #26a69a); }
+body.math .card h2 { color: #01579b; }
+body.math .card h3 { color: #2e7d32; }
+body.math .crumb a { color: #0277bd; border-color: #e1f5fe; }
+body.math .crumb a:hover { background: #e1f5fe; }
+body.math .btn { background: #0277bd; }
+body.math .btn:hover { background: #01579b; }
+body.math .btn.ghost { background: #fff; color: #0277bd; border-color: #0277bd; }
+body.math .score { background: #0277bd; }
+body.math .q .qnum { background: #26a69a; }
+body.math .menu a { border-top-color: #0277bd; }
+body.math .menu a b { color: #01579b; }
+
+/* ---- times table cards ---- */
+.tt { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.tt .col { background: #fff3e0; border: 2px solid #ffcc80; border-radius: 14px; padding: 12px 14px; }
+.tt .col h4 {
+  margin: 0 0 8px; font-family: 'Mali', sans-serif; font-size: 20px;
+  color: #e65100; text-align: center;
+}
+.tt .row2 {
+  background: #ffe0b2; border-radius: 9px; padding: 6px 10px; margin: 5px 0;
+  font-size: 19px; font-weight: 700; text-align: center; letter-spacing: .5px;
+}
+
+/* ---- skip count chain ---- */
+.chain { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+.chain .n {
+  min-width: 56px; text-align: center; background: #fff; border: 2px solid #ffb74d;
+  border-radius: 10px; padding: 8px 6px; font-weight: 700; font-size: 18px;
+}
+.chain .arrow { color: #e53935; font-weight: 700; }
+
+/* ---- column (vertical) sums ---- */
+.sums { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 14px; }
+.sum {
+  background: #fff; border: 2px solid #e0e0e0; border-radius: 14px;
+  padding: 14px 10px; text-align: right; font-family: 'Courier New', monospace;
+}
+.sum .lbl {
+  text-align: left; font-family: 'Sarabun', sans-serif; font-size: 14px;
+  color: #78909c; margin-bottom: 6px;
+}
+.sum .a, .sum .b { font-size: 27px; font-weight: 700; letter-spacing: 4px; }
+.sum .b::before { content: '×'; float: left; font-size: 24px; }
+.sum hr { border: 0; border-top: 3px solid #37474f; margin: 6px 0; }
+.sum input {
+  font-family: 'Courier New', monospace; font-size: 24px; font-weight: 700;
+  width: 100%; text-align: right; letter-spacing: 3px;
+  border: 2px solid #dfe6ea; border-radius: 9px; padding: 5px 8px;
+}
+.sum input.right { background: #c8e6c9; border-color: #2e7d32; }
+.sum input.miss  { background: #ffcdd2; border-color: #d32f2f; }
+.sum .key { font-family: 'Sarabun', sans-serif; font-size: 15px; color: #c62828; font-weight: 700; display: none; }
+.sum .key.show { display: block; }
+
+/* ---- inline fill rows ---- */
+.fills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin-top: 12px; }
+.fill1 {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  background: #fafafa; border: 2px solid #eceff1; border-radius: 12px;
+  padding: 10px 14px; font-size: 19px; font-weight: 600;
+}
+.fill1 input {
+  font-family: inherit; font-size: 19px; font-weight: 700; width: 84px; text-align: center;
+  border: 2px solid #dfe6ea; border-radius: 9px; padding: 5px;
+}
+.fill1 input.right { background: #c8e6c9; border-color: #2e7d32; }
+.fill1 input.miss  { background: #ffcdd2; border-color: #d32f2f; }
+.fill1 .tag { font-size: 14px; color: #78909c; min-width: 22px; }
+
+/* ---- word problem ---- */
+.wp { background: #fff; border: 2px solid #e0e0e0; border-left: 8px solid #26a69a; border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; }
+.wp .story { font-size: 19px; line-height: 1.9; }
+.wp .story b { color: #00695c; }
+.bar { display: flex; gap: 3px; margin: 10px 0; flex-wrap: wrap; }
+.bar span {
+  background: #c8e6c9; border: 2px solid #66bb6a; border-radius: 6px;
+  min-width: 46px; text-align: center; padding: 7px 4px; font-weight: 700; font-size: 16px;
+}
+.bar span.one { background: #fff59d; border-color: #fbc02d; }
+
+/* ---- stat strip ---- */
+.strip {
+  display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  background: #e1f5fe; border-radius: 14px; padding: 14px; margin: 14px 0;
+}
+.strip div { text-align: center; min-width: 96px; }
+.strip b { display: block; font-size: 27px; color: #01579b; font-family: 'Mali', sans-serif; }
+.strip span { font-size: 14px; color: #546e7a; }
+
+/* ---- full multiplication grid ---- */
+.grid-table { overflow-x: auto; }
+.grid-table table { font-size: 16px; min-width: 560px; }
+.grid-table th, .grid-table td { text-align: center; padding: 7px 4px; }
+.grid-table thead th, .grid-table tbody th { background: #b3e5fc; color: #01579b; }
+.grid-table td.hl { background: #fff9c4; font-weight: 700; }

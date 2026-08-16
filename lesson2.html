@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 2 — Multiplication without Regrouping</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 5 Multiplication</span>
+  <h1>Multiplication without Regrouping</h1>
+  <p>Lesson 2 • การคูณแบบไม่ต้องทด</p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson1.html">⬅️ Lesson 1</a>
+    <a href="lesson3.html">➡️ Lesson 3</a>
+  </nav>
+
+  <div class="card">
+    <h2>🤔 What does "without regrouping" mean?</h2>
+    <p>
+      When we multiply each digit and every answer is <b>9 or smaller</b>,
+      we do <b>not</b> need to carry anything. That is <b>multiplication without regrouping</b>.
+    </p>
+    <p class="th">
+      เมื่อคูณเลขแต่ละหลักแล้วได้ผลลัพธ์ <b>ไม่เกิน 9</b> ทุกหลัก เราไม่ต้องทดเลข
+      เรียกว่า <b>การคูณแบบไม่ทด</b> เป็นแบบที่ง่ายที่สุด
+    </p>
+    <div class="tip">
+      <b>Golden rule / กฎทอง:</b> Always start from the <b>ONES</b> column on the right,
+      then TENS, then HUNDREDS.<br>
+      <span class="th">เริ่มคูณจากหลัก <b>หน่วย</b> ทางขวาเสมอ แล้วค่อยไป สิบ → ร้อย</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🐑 Example 1 — 4 × 2 (one digit)</h2>
+    <p>2 rows of 4 sheep. <span class="th">แกะ 2 แถว แถวละ 4 ตัว</span></p>
+    <table>
+      <thead><tr><th>HUNDREDS</th><th>TENS</th><th>ONES</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td>🐑🐑🐑🐑</td></tr>
+        <tr><td></td><td></td><td>🐑🐑🐑🐑</td></tr>
+      </tbody>
+    </table>
+    <div class="sums" style="max-width:200px">
+      <div class="sum">
+        <div class="lbl">Step by step</div>
+        <div class="a">4</div>
+        <div class="b">2</div>
+        <hr>
+        <div class="a" style="color:#2e7d32">8</div>
+      </div>
+    </div>
+    <p><b>4 × 2 = 8</b> — ones only, nothing to carry.</p>
+  </div>
+
+  <div class="card">
+    <h2>🔟 Example 2 — 43 × 2 (two digits)</h2>
+    <table>
+      <thead><tr><th>Step</th><th>What we do</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td>ONES: 3 × 2</td><td>= <b>6</b> &nbsp;<span class="th">เขียน 6 ในหลักหน่วย</span></td></tr>
+        <tr><td><b>2</b></td><td>TENS: 4 × 2</td><td>= <b>8</b> &nbsp;<span class="th">เขียน 8 ในหลักสิบ</span></td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>Answer</b></td><td style="font-size:22px"><b style="color:#2e7d32">86</b></td></tr>
+      </tbody>
+    </table>
+    <div class="sums" style="max-width:420px">
+      <div class="sum">
+        <div class="lbl">40 × 2</div>
+        <div class="a">40</div><div class="b">2</div><hr>
+        <div class="a" style="color:#2e7d32">80</div>
+      </div>
+      <div class="sum">
+        <div class="lbl">43 × 2</div>
+        <div class="a">43</div><div class="b">2</div><hr>
+        <div class="a" style="color:#2e7d32">86</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💯 Example 3 — three digits</h2>
+    <div class="sums" style="max-width:420px">
+      <div class="sum">
+        <div class="lbl">300 × 2</div>
+        <div class="a">300</div><div class="b">2</div><hr>
+        <div class="a" style="color:#2e7d32">600</div>
+      </div>
+      <div class="sum">
+        <div class="lbl">312 × 2</div>
+        <div class="a">312</div><div class="b">2</div><hr>
+        <div class="a" style="color:#2e7d32">624</div>
+      </div>
+    </div>
+    <p>
+      For <b>312 × 2</b>: ONES 2×2 = 4 &nbsp;•&nbsp; TENS 1×2 = 2 &nbsp;•&nbsp; HUNDREDS 3×2 = 6 → <b>624</b>
+    </p>
+    <div class="note">
+      <b>Check yourself:</b> every single-digit answer was 9 or less (4, 2, 6),
+      so no carrying was needed. <span class="th">ทุกหลักได้ไม่เกิน 9 จึงไม่ต้องทด</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✏️ Try it now — from the book</h2>
+    <p class="th">โจทย์ชุดนี้มาจากในบทเรียนเลย พิมพ์คำตอบแล้วกดตรวจได้เลย</p>
+
+    <h3>A. Multiplication facts</h3>
+    <div class="sums" id="setA"></div>
+
+    <h3>B. 2-digit and 3-digit × 1-digit</h3>
+    <div class="sums" id="setB"></div>
+
+    <button class="btn" onclick="checkAll()">Check my answers</button>
+    <button class="btn ghost" onclick="showKeys()">Show answer key</button>
+    <div class="fb" id="fb"></div>
+  </div>
+
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson3.html">➡️ Next: With Regrouping</a>
+    <a href="practice.html">✏️ Practice 150+ problems</a>
+  </nav>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+var SET_A = [[6,8],[7,9],[8,7],[9,6]];
+var SET_B = [[38,1],[91,3],[210,4],[632,2]];
+var items = [];
+
+function build(listId, pairs){
+  var wrap = document.getElementById(listId);
+  pairs.forEach(function(p){
+    var a = p[0], b = p[1], ans = a * b;
+    var box = document.createElement('div');
+    box.className = 'sum';
+    box.innerHTML =
+      '<div class="lbl">' + a + ' × ' + b + '</div>' +
+      '<div class="a">' + a + '</div>' +
+      '<div class="b">' + b + '</div>' +
+      '<hr>' +
+      '<input type="text" inputmode="numeric" placeholder="?" data-ans="' + ans + '">' +
+      '<div class="key">= ' + ans + '</div>';
+    wrap.appendChild(box);
+    items.push({ input: box.querySelector('input'), key: box.querySelector('.key'), ans: ans });
+  });
+}
+build('setA', SET_A);
+build('setB', SET_B);
+
+function checkAll(){
+  var right = 0, blank = 0;
+  items.forEach(function(it){
+    it.input.classList.remove('right','miss');
+    var v = it.input.value.replace(/[\s,]/g,'');
+    if (v === '') { blank++; return; }
+    if (parseInt(v, 10) === it.ans) { it.input.classList.add('right'); right++; }
+    else { it.input.classList.add('miss'); it.key.classList.add('show'); }
+  });
+  var fb = document.getElementById('fb');
+  fb.className = 'fb show ' + (right === items.length ? 'ok' : 'no');
+  fb.innerHTML = (right === items.length ? '🏆 ' : '📘 ') +
+    '<b>' + right + ' / ' + items.length + ' correct</b>' +
+    (blank ? ' &nbsp;(' + blank + ' left blank / ยังไม่ได้ตอบ ' + blank + ' ข้อ)' : '') +
+    (right === items.length ? ' — Perfect! เก่งมาก' : ' — the red ones show the correct answer below.');
+}
+
+function showKeys(){
+  items.forEach(function(it){ it.key.classList.add('show'); });
+}
+</script>
+</body>
+</html>

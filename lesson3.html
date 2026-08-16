@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 3 — Multiplication with Regrouping</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 5 Multiplication</span>
+  <h1>Multiplication with Regrouping</h1>
+  <p>Lesson 3 • การคูณแบบมีการทด</p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson2.html">⬅️ Lesson 2</a>
+    <a href="lesson4.html">➡️ Lesson 4</a>
+  </nav>
+
+  <div class="card">
+    <h2>🤔 When do we regroup?</h2>
+    <p>
+      When a column gives an answer of <b>10 or more</b>, we cannot write two digits in one place.
+      We keep the ones digit and <b>carry</b> the tens digit to the next column. This is <b>regrouping</b>.
+    </p>
+    <p class="th">
+      ถ้าคูณหลักไหนแล้วได้ <b>ตั้งแต่ 10 ขึ้นไป</b> เราเขียนสองตัวในหลักเดียวไม่ได้
+      ต้องเก็บเลขหลักหน่วยไว้ แล้ว <b>ทด</b> เลขหลักสิบไปบวกกับหลักถัดไป เรียกว่า <b>การทด</b>
+    </p>
+    <div class="note">
+      <b>3 steps every time / จำ 3 ขั้นตอนนี้:</b>
+      <ol style="margin:8px 0 0">
+        <li>Multiply the ones. <span class="th">คูณหลักหน่วยก่อน</span></li>
+        <li>If the answer is 10 or more, write the ones digit and carry the tens above the next column.
+          <span class="th">ถ้าได้ตั้งแต่ 10 เขียนตัวหลัง ทดตัวหน้าไว้ข้างบน</span></li>
+        <li>Multiply the next column, then <b>add the carried number</b>.
+          <span class="th">คูณหลักถัดไป แล้วอย่าลืม <b>บวกตัวทด</b></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🟡 Example 1 — 34 × 3</h2>
+    <table>
+      <thead><tr><th style="width:14%">Step</th><th>What we do</th><th style="width:26%">Write / Carry</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>1</b></td>
+          <td>ONES: 4 × 3 = <b>12</b> &nbsp;<span class="th">ได้ 12 ซึ่งเกิน 9</span></td>
+          <td>write <b>2</b>, carry <b style="color:#d32f2f">1</b></td>
+        </tr>
+        <tr>
+          <td><b>2</b></td>
+          <td>TENS: 3 × 3 = 9, then add the carry: 9 + <b style="color:#d32f2f">1</b> = <b>10</b></td>
+          <td>write <b>10</b></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:right"><b>Answer</b></td>
+          <td style="font-size:24px"><b style="color:#2e7d32">102</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="sums" style="max-width:200px">
+      <div class="sum">
+        <div class="lbl" style="color:#d32f2f;text-align:right">+1 ↴</div>
+        <div class="a">34</div><div class="b">3</div><hr>
+        <div class="a" style="color:#2e7d32">102</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🟠 Example 2 — 536 × 2</h2>
+    <table>
+      <thead><tr><th style="width:14%">Step</th><th>What we do</th><th style="width:26%">Write / Carry</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td>ONES: 6 × 2 = <b>12</b></td><td>write <b>2</b>, carry <b style="color:#d32f2f">1</b></td></tr>
+        <tr><td><b>2</b></td><td>TENS: 3 × 2 = 6, + <b style="color:#d32f2f">1</b> = <b>7</b></td><td>write <b>7</b></td></tr>
+        <tr><td><b>3</b></td><td>HUNDREDS: 5 × 2 = <b>10</b></td><td>write <b>10</b></td></tr>
+        <tr><td colspan="2" style="text-align:right"><b>Answer</b></td><td style="font-size:24px"><b style="color:#2e7d32">1,072</b></td></tr>
+      </tbody>
+    </table>
+    <div class="sums" style="max-width:200px">
+      <div class="sum">
+        <div class="lbl" style="color:#d32f2f;text-align:right">+1 ↴</div>
+        <div class="a">536</div><div class="b">2</div><hr>
+        <div class="a" style="color:#2e7d32">1072</div>
+      </div>
+    </div>
+    <div class="tip">
+      Notice the answer has <b>4 digits</b> — a 3-digit number times 2 can pass one thousand!<br>
+      <span class="th">คำตอบมี 4 หลัก เพราะเลข 3 หลักคูณแล้วเกินหลักพันได้</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔴 Example 3 — two more</h2>
+    <div class="sums" style="max-width:420px">
+      <div class="sum">
+        <div class="lbl">603 × 4</div>
+        <div class="a">603</div><div class="b">4</div><hr>
+        <div class="a" style="color:#2e7d32">2412</div>
+      </div>
+      <div class="sum">
+        <div class="lbl" style="color:#d32f2f">+4 ↴ &nbsp; 299 × 5</div>
+        <div class="a">299</div><div class="b">5</div><hr>
+        <div class="a" style="color:#2e7d32">1495</div>
+      </div>
+    </div>
+    <p>
+      <b>603 × 4:</b> ones 3×4 = 12 → write 2 carry 1 &nbsp;•&nbsp; tens 0×4 = 0, +1 = 1 &nbsp;•&nbsp;
+      hundreds 6×4 = 24 → <b>2412</b>
+    </p>
+    <p>
+      <b>299 × 5:</b> ones 9×5 = 45 → write 5 carry 4 &nbsp;•&nbsp; tens 9×5 = 45, +4 = 49 → write 9 carry 4 &nbsp;•&nbsp;
+      hundreds 2×5 = 10, +4 = 14 → <b>1495</b>
+    </p>
+    <div class="note">
+      <b>Careful!</b> 0 × any number = 0 — but you still must <b>add the carry</b> to it.
+      <span class="th">ระวัง! 0 คูณอะไรก็ได้ 0 แต่ยังต้องบวกตัวทดเข้าไปด้วยนะ</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✏️ Let's Practice — from the book</h2>
+    <p class="th">โจทย์ชุดนี้มาจากในบทเรียนเลย ทุกข้อต้องทด ลองทำดู</p>
+
+    <h3>Set 1</h3>
+    <div class="sums" id="set1"></div>
+
+    <h3>Set 2</h3>
+    <div class="sums" id="set2"></div>
+
+    <button class="btn" onclick="checkAll()">Check my answers</button>
+    <button class="btn ghost" onclick="showKeys()">Show answer key</button>
+    <div class="fb" id="fb"></div>
+  </div>
+
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson4.html">➡️ Next: Word Problems</a>
+    <a href="practice.html">✏️ Practice 150+ problems</a>
+  </nav>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+var SET_1 = [[14,3],[18,9],[15,3],[52,9],[178,3]];
+var SET_2 = [[27,6],[99,2],[12,6],[33,5],[213,4]];
+var items = [];
+
+function build(listId, pairs){
+  var wrap = document.getElementById(listId);
+  pairs.forEach(function(p){
+    var a = p[0], b = p[1], ans = a * b;
+    var box = document.createElement('div');
+    box.className = 'sum';
+    box.innerHTML =
+      '<div class="lbl">' + a + ' × ' + b + '</div>' +
+      '<div class="a">' + a + '</div>' +
+      '<div class="b">' + b + '</div>' +
+      '<hr>' +
+      '<input type="text" inputmode="numeric" placeholder="?" data-ans="' + ans + '">' +
+      '<div class="key">= ' + ans + '</div>';
+    wrap.appendChild(box);
+    items.push({ input: box.querySelector('input'), key: box.querySelector('.key'), ans: ans });
+  });
+}
+build('set1', SET_1);
+build('set2', SET_2);
+
+function checkAll(){
+  var right = 0, blank = 0;
+  items.forEach(function(it){
+    it.input.classList.remove('right','miss');
+    var v = it.input.value.replace(/[\s,]/g,'');
+    if (v === '') { blank++; return; }
+    if (parseInt(v, 10) === it.ans) { it.input.classList.add('right'); right++; }
+    else { it.input.classList.add('miss'); it.key.classList.add('show'); }
+  });
+  var fb = document.getElementById('fb');
+  fb.className = 'fb show ' + (right === items.length ? 'ok' : 'no');
+  fb.innerHTML = (right === items.length ? '🏆 ' : '📘 ') +
+    '<b>' + right + ' / ' + items.length + ' correct</b>' +
+    (blank ? ' &nbsp;(' + blank + ' left blank / ยังไม่ได้ตอบ ' + blank + ' ข้อ)' : '') +
+    (right === items.length ? ' — Perfect! เก่งมาก' : ' — the red ones show the correct answer below.');
+}
+function showKeys(){ items.forEach(function(it){ it.key.classList.add('show'); }); }
+</script>
+</body>
+</html>

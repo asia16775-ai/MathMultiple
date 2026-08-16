@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Unit 5 Multiplication</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .seq { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0 18px; }
+  .seq .n, .seq input {
+    width:66px; text-align:center; font-family:inherit; font-size:18px; font-weight:700;
+    border:2px solid #ffb74d; border-radius:10px; padding:8px 4px; background:#fff;
+  }
+  .seq .n { background:#fff3e0; }
+  .seq input { border-color:#dfe6ea; }
+  .seq input.right { background:#c8e6c9; border-color:#2e7d32; }
+  .seq input.miss  { background:#ffcdd2; border-color:#d32f2f; }
+  .seq .arrow { color:#e53935; font-weight:700; }
+  .sec-head {
+    display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+  }
+  .pill {
+    background:#e1f5fe; color:#01579b; border-radius:999px; padding:4px 14px;
+    font-size:15px; font-weight:700;
+  }
+  .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .toolbar select {
+    font-family:inherit; font-size:17px; padding:8px 12px;
+    border:2px solid #dfe6ea; border-radius:10px; background:#fff;
+  }
+  .total {
+    position:sticky; top:0; z-index:9; background:#0277bd; color:#fff;
+    border-radius:0 0 16px 16px; padding:12px 18px; text-align:center;
+    font-family:'Mali',sans-serif; font-size:19px; margin-bottom:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+  }
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 5 Multiplication</span>
+  <h1>Practice Time! ✏️</h1>
+  <p>โจทย์ครบทุกข้อจากหนังสือ + สุ่มโจทย์ใหม่ได้ไม่จำกัด</p>
+</header>
+
+<div class="wrap">
+  <div class="total" id="total">Total correct: <b id="tsc">0</b> / <b id="ttot">0</b></div>
+
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson1.html">📖 Tables</a>
+    <a href="quiz.html">🏆 Final Test</a>
+  </nav>
+
+  <!-- ============ 1. SKIP COUNTING ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>1️⃣ Skip Counting</h2><span class="pill" id="p1"></span></div>
+    <p class="th">เติมตัวเลขที่หายไปในการนับทีละ 6, 7, 8 และ 9</p>
+    <div id="sec1"></div>
+    <button class="btn" onclick="checkSec(1)">Check</button>
+    <button class="btn ghost" onclick="keySec(1)">Show answers</button>
+    <div class="fb" id="fb1"></div>
+  </div>
+
+  <!-- ============ 2. COUNT IN ... ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>2️⃣ Count in sixes, sevens, eights, nines</h2><span class="pill" id="p2"></span></div>
+    <p class="th">เติมตัวเลขที่หายไป บางข้อเริ่มจากตรงกลาง ต้องคิดย้อนกลับด้วยนะ</p>
+    <div id="sec2"></div>
+    <button class="btn" onclick="checkSec(2)">Check</button>
+    <button class="btn ghost" onclick="keySec(2)">Show answers</button>
+    <div class="fb" id="fb2"></div>
+  </div>
+
+  <!-- ============ 3. FILL IN THE MISSING NUMBERS ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>3️⃣ Fill in the missing numbers</h2><span class="pill" id="p3"></span></div>
+    <p class="th">โจทย์ชุดนี้มาจากแบบฝึกหัดหน้า 90, 92, 94 และ 96</p>
+    <div id="sec3"></div>
+    <button class="btn" onclick="checkSec(3)">Check</button>
+    <button class="btn ghost" onclick="keySec(3)">Show answers</button>
+    <div class="fb" id="fb3"></div>
+  </div>
+
+  <!-- ============ 4. TIMES TABLE DRILL ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>4️⃣ Times Table Drill — 6, 7, 8, 9</h2><span class="pill" id="p4"></span></div>
+    <p class="th">สูตรคูณแม่ 6 7 8 9 ครบทุกข้อ ตั้งแต่ ×1 ถึง ×10 รวม 40 ข้อ</p>
+    <div id="sec4"></div>
+    <button class="btn" onclick="checkSec(4)">Check</button>
+    <button class="btn ghost" onclick="keySec(4)">Show answers</button>
+    <div class="fb" id="fb4"></div>
+  </div>
+
+  <!-- ============ 5. WITHOUT REGROUPING ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>5️⃣ Multiply — without regrouping</h2><span class="pill" id="p5"></span></div>
+    <p class="th">คูณแบบไม่ต้องทด จากแบบฝึกหัดหน้า 125</p>
+    <div class="sums" id="sec5"></div>
+    <button class="btn" onclick="checkSec(5)">Check</button>
+    <button class="btn ghost" onclick="keySec(5)">Show answers</button>
+    <div class="fb" id="fb5"></div>
+  </div>
+
+  <!-- ============ 6. THE VEGETABLE PUZZLE ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>6️⃣ Multiply to find the product 🥕</h2><span class="pill" id="p6"></span></div>
+    <p class="th">
+      หน้า 126 — คูณให้ครบ แล้วจับคู่ผลคูณกับผักที่ Mr Smith ใช้ทำสลัด
+    </p>
+    <div class="sums" id="sec6"></div>
+    <button class="btn" onclick="checkSec(6)">Check</button>
+    <button class="btn ghost" onclick="keySec(6)">Show answers</button>
+    <div class="fb" id="fb6"></div>
+    <div class="note" style="margin-top:14px">
+      <b>Mr Smith made a salad. Match your products to find the vegetables used:</b><br>
+      682 → ? &nbsp;&nbsp; 804 → ? &nbsp;&nbsp; 822 → ? &nbsp;&nbsp; 663 → ?
+      <button class="btn ghost" style="display:block" onclick="tog('veg')">Show the salad</button>
+      <div class="answer" id="veg">
+        682 = 341 × 2 → 🥕 <b>carrot</b><br>
+        804 = 201 × 4 → 🫑 <b>bell pepper</b><br>
+        822 = 411 × 2 → 🫛 <b>peas</b><br>
+        663 = 221 × 3 → 🍅 <b>tomato</b><br>
+        (428 = 214 × 2 → 🎃 pumpkin was <b>not</b> used)
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 7. WITH REGROUPING ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>7️⃣ Multiply — with regrouping</h2><span class="pill" id="p7"></span></div>
+    <p class="th">คูณแบบมีการทด จากแบบฝึกหัดหน้า 129 และเพิ่มให้อีกชุด</p>
+    <div class="sums" id="sec7"></div>
+    <button class="btn" onclick="checkSec(7)">Check</button>
+    <button class="btn ghost" onclick="keySec(7)">Show answers</button>
+    <div class="fb" id="fb7"></div>
+  </div>
+
+  <!-- ============ 8. MIXED CHALLENGE ============ -->
+  <div class="card">
+    <div class="sec-head"><h2>8️⃣ Mixed Challenge — 3-digit × 1-digit</h2><span class="pill" id="p8"></span></div>
+    <p class="th">ข้อยาก ๆ ผสมกัน ทั้งทดและไม่ทด ลองดูว่าทำได้กี่ข้อ</p>
+    <div class="sums" id="sec8"></div>
+    <button class="btn" onclick="checkSec(8)">Check</button>
+    <button class="btn ghost" onclick="keySec(8)">Show answers</button>
+    <div class="fb" id="fb8"></div>
+  </div>
+
+  <!-- ============ 9. RANDOM GENERATOR ============ -->
+  <div class="card" style="border:3px solid #26a69a">
+    <div class="sec-head"><h2>♾️ Endless Practice — สุ่มโจทย์ใหม่ไม่จำกัด</h2><span class="pill" id="p9"></span></div>
+    <p class="th">
+      เลือกระดับที่อยากฝึก แล้วกด <b>New problems</b> จะได้โจทย์ชุดใหม่ 12 ข้อทุกครั้ง
+      ฝึกได้ทุกวันไม่ซ้ำ
+    </p>
+    <div class="toolbar">
+      <select id="level">
+        <option value="facts">Level 1 — Times tables 6, 7, 8, 9</option>
+        <option value="d2nr">Level 2 — 2-digit × 1-digit (no regrouping)</option>
+        <option value="d2r">Level 3 — 2-digit × 1-digit (with regrouping)</option>
+        <option value="d3nr">Level 4 — 3-digit × 1-digit (no regrouping)</option>
+        <option value="d3r">Level 5 — 3-digit × 1-digit (with regrouping)</option>
+        <option value="mix">Level 6 — Mixed everything 🔥</option>
+      </select>
+      <button class="btn" onclick="newRandom()">🎲 New problems</button>
+      <button class="btn ghost" onclick="checkRandom()">Check</button>
+      <button class="btn ghost" onclick="keyRandom()">Show answers</button>
+    </div>
+    <div class="sums" id="sec9" style="margin-top:14px"></div>
+    <div class="fb" id="fb9"></div>
+  </div>
+
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson4.html">📖 Word Problems</a>
+    <a href="quiz.html">🏆 Final Test</a>
+  </nav>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+/* =============== helpers =============== */
+function tog(id){ document.getElementById(id).classList.toggle('show'); }
+
+var SEC = {};                 /* section number -> array of item objects */
+function reg(n, item){ (SEC[n] = SEC[n] || []).push(item); }
+
+function makeInput(ans){
+  var i = document.createElement('input');
+  i.type = 'text';
+  i.inputMode = 'numeric';
+  i.placeholder = '?';
+  i.dataset.ans = ans;
+  return i;
+}
+
+/* =============== 1. SKIP COUNTING =============== */
+var SKIP = [
+  { by: 6, title: 'Skip count in 6s — นับทีละ 6', given: [0] },
+  { by: 7, title: 'Skip count in 7s — นับทีละ 7', given: [0] },
+  { by: 8, title: 'Skip count in 8s — นับทีละ 8', given: [0] },
+  { by: 9, title: 'Skip count in 9s — นับทีละ 9', given: [0] }
+];
+
+(function(){
+  var wrap = document.getElementById('sec1');
+  SKIP.forEach(function(s){
+    var h = document.createElement('h3');
+    h.textContent = s.title;
+    wrap.appendChild(h);
+
+    var row = document.createElement('div');
+    row.className = 'seq';
+    for (var k = 1; k <= 10; k++) {
+      if (k > 1) {
+        var ar = document.createElement('span');
+        ar.className = 'arrow';
+        ar.textContent = '→';
+        row.appendChild(ar);
+      }
+      var val = s.by * k;
+      if (s.given.indexOf(k - 1) > -1) {
+        var n = document.createElement('span');
+        n.className = 'n';
+        n.textContent = val;
+        row.appendChild(n);
+      } else {
+        var inp = makeInput(val);
+        row.appendChild(inp);
+        reg(1, { input: inp, ans: val });
+      }
+    }
+    wrap.appendChild(row);
+  });
+})();
+
+/* =============== 2. COUNT IN ... =============== */
+var COUNTS = [
+  { label: 'Count in sixes (a)',  vals: [36, 42, 48, null, null] },
+  { label: 'Count in sixes (b)',  vals: [12, null, 24, null, 36, 42] },
+  { label: 'Count in sevens (a)', vals: [14, null, 28, null, 42] },
+  { label: 'Count in sevens (b)', vals: [42, 49, null, null, 70] },
+  { label: 'Count in eights (a)', vals: [16, null, 32, null, 48] },
+  { label: 'Count in eights (b)', vals: [48, null, null, 72, 80] },
+  { label: 'Count in nines (a)',  vals: [54, 63, null, null, 90] },
+  { label: 'Count in nines (b)',  vals: [null, 27, null, 45, 54] }
+];
+var COUNT_STEP = [6, 6, 7, 7, 8, 8, 9, 9];
+
+(function(){
+  var wrap = document.getElementById('sec2');
+  COUNTS.forEach(function(c, ci){
+    var h = document.createElement('h3');
+    h.textContent = c.label;
+    wrap.appendChild(h);
+
+    /* work out the real value at every position from the first known one */
+    var step = COUNT_STEP[ci], baseIdx = -1, baseVal = 0;
+    c.vals.forEach(function(v, i){ if (v !== null && baseIdx < 0) { baseIdx = i; baseVal = v; } });
+
+    var row = document.createElement('div');
+    row.className = 'seq';
+    c.vals.forEach(function(v, i){
+      var real = baseVal + (i - baseIdx) * step;
+      if (v !== null) {
+        var n = document.createElement('span');
+        n.className = 'n';
+        n.textContent = v;
+        row.appendChild(n);
+      } else {
+        var inp = makeInput(real);
+        row.appendChild(inp);
+        reg(2, { input: inp, ans: real });
+      }
+    });
+    wrap.appendChild(row);
+  });
+})();
+
+/* =============== 3. FILL IN THE MISSING NUMBERS =============== */
+/* text uses ___ as the blank marker */
+var FILLS = [
+  ['(a)', '7 sixes = 7 × ___', 6],
+  ['(b)', '10 sixes = ___ × 6', 10],
+  ['(c)', '6 + 6 + 6 = 3 × ___', 6],
+  ['(d)', '6 × 9 = 9 × ___', 6],
+  ['(e)', '6 × 4 = ___', 24],
+  ['(f)', '8 × 6 = ___', 48],
+  ['(g)', '5 × 6 = ___', 30],
+  ['(h)', '6 × 2 = ___', 12],
+
+  ['(a)', '7 sevens = 7 × ___', 7],
+  ['(b)', '7 + 7 = 2 × ___', 7],
+  ['(c)', '7 + 7 + 7 = 3 × ___', 7],
+  ['(d)', '7 × 10 = 10 × ___', 7],
+  ['(e)', '7 × 9 = ___', 63],
+  ['(f)', '5 × 7 = ___', 35],
+  ['(g)', '7 × 4 = ___', 28],
+  ['(h)', '6 × 7 = ___', 42],
+
+  ['(a)', '9 eights = 9 × ___', 8],
+  ['(b)', '8 + 8 = ___ × 2', 8],
+  ['(c)', '8 + 8 + 8 = 3 × ___', 8],
+  ['(d)', '10 × 8 = 8 × ___', 10],
+  ['(e)', '8 × 4 = ___', 32],
+  ['(f)', '6 × 8 = ___', 48],
+  ['(g)', '8 × 5 = ___', 40],
+  ['(h)', '8 × 8 = ___', 64],
+
+  ['(a)', '7 nines = ___ × 9', 7],
+  ['(b)', '10 nines = 10 × ___', 9],
+  ['(c)', '9 + 9 + 9 = 3 × ___', 9],
+  ['(d)', '4 × 9 = 9 × ___', 4],
+  ['(e)', '2 × 9 = ___', 18],
+  ['(f)', '9 × 8 = ___', 72],
+  ['(g)', '5 × 9 = ___', 45],
+  ['(h)', '9 × 6 = ___', 54]
+];
+
+(function(){
+  var wrap = document.getElementById('sec3');
+  var titles = ['Sixes (page 90)', 'Sevens (page 92)', 'Eights (page 94)', 'Nines (page 96)'];
+  for (var g = 0; g < 4; g++) {
+    var h = document.createElement('h3');
+    h.textContent = titles[g];
+    wrap.appendChild(h);
+
+    var grid = document.createElement('div');
+    grid.className = 'fills';
+    for (var k = 0; k < 8; k++) {
+      var f = FILLS[g * 8 + k];
+      var row = document.createElement('div');
+      row.className = 'fill1';
+
+      var tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = f[0];
+      row.appendChild(tag);
+
+      var parts = f[1].split('___');
+      var left = document.createElement('span');
+      left.textContent = parts[0];
+      row.appendChild(left);
+
+      var inp = makeInput(f[2]);
+      row.appendChild(inp);
+      reg(3, { input: inp, ans: f[2] });
+
+      if (parts[1]) {
+        var right = document.createElement('span');
+        right.textContent = parts[1];
+        row.appendChild(right);
+      }
+      grid.appendChild(row);
+    }
+    wrap.appendChild(grid);
+  }
+})();
+
+/* =============== 4. TIMES TABLE DRILL =============== */
+(function(){
+  var wrap = document.getElementById('sec4');
+  [6, 7, 8, 9].forEach(function(base){
+    var h = document.createElement('h3');
+    h.textContent = 'Table of ' + base + ' — แม่ ' + base;
+    wrap.appendChild(h);
+
+    var grid = document.createElement('div');
+    grid.className = 'fills';
+    for (var k = 1; k <= 10; k++) {
+      var row = document.createElement('div');
+      row.className = 'fill1';
+      var lab = document.createElement('span');
+      lab.textContent = base + ' × ' + k + ' =';
+      row.appendChild(lab);
+      var inp = makeInput(base * k);
+      row.appendChild(inp);
+      reg(4, { input: inp, ans: base * k });
+      grid.appendChild(row);
+    }
+    wrap.appendChild(grid);
+  });
+})();
+
+/* =============== column-sum sections =============== */
+function buildSums(secNo, containerId, pairs){
+  var wrap = document.getElementById(containerId);
+  pairs.forEach(function(p){
+    var a = p[0], b = p[1], ans = a * b;
+    var box = document.createElement('div');
+    box.className = 'sum';
+    box.innerHTML =
+      '<div class="lbl">' + a + ' × ' + b + '</div>' +
+      '<div class="a">' + a + '</div>' +
+      '<div class="b">' + b + '</div><hr>';
+    var inp = makeInput(ans);
+    box.appendChild(inp);
+    var key = document.createElement('div');
+    key.className = 'key';
+    key.textContent = '= ' + ans;
+    box.appendChild(key);
+    wrap.appendChild(box);
+    reg(secNo, { input: inp, key: key, ans: ans });
+  });
+}
+
+/* 5 — without regrouping (page 125) */
+buildSums(5, 'sec5', [
+  [43,2],[34,2],[432,2],[312,3],
+  [102,4],[220,4],[122,4],[231,3],
+  [21,4],[123,3],[411,2],[303,3]
+]);
+
+/* 6 — page 126 vegetable puzzle */
+buildSums(6, 'sec6', [[214,2],[221,3],[201,4],[411,2],[341,2]]);
+
+/* 7 — with regrouping (page 129 + extra) */
+buildSums(7, 'sec7', [
+  [26,3],[24,4],[276,3],[125,7],[103,5],[390,2],
+  [47,5],[68,7],[95,4],[86,9],[59,8],[78,6]
+]);
+
+/* 8 — mixed challenge */
+buildSums(8, 'sec8', [
+  [147,6],[258,4],[309,7],[416,5],[527,3],[638,2],
+  [704,8],[815,9],[926,3],[183,7],[264,5],[375,4]
+]);
+
+/* =============== 9. RANDOM GENERATOR =============== */
+var randItems = [];
+
+function rnd(min, max){ return min + Math.floor(Math.random() * (max - min + 1)); }
+
+function genPair(level){
+  var a, b, d;
+  if (level === 'facts') {
+    return [rnd(6, 9), rnd(1, 10)];
+  }
+  if (level === 'd2nr') {                 /* 2-digit, no carrying */
+    b = rnd(2, 4);
+    var tens = rnd(1, Math.floor(9 / b));
+    var ones = rnd(0, Math.floor(9 / b));
+    return [tens * 10 + ones, b];
+  }
+  if (level === 'd2r') {                  /* 2-digit, guaranteed carrying */
+    do { a = rnd(12, 99); b = rnd(3, 9); } while (a % 10 * b < 10);
+    return [a, b];
+  }
+  if (level === 'd3nr') {                 /* 3-digit, no carrying */
+    b = rnd(2, 3);
+    var h = rnd(1, Math.floor(9 / b));
+    var t = rnd(0, Math.floor(9 / b));
+    var o = rnd(0, Math.floor(9 / b));
+    return [h * 100 + t * 10 + o, b];
+  }
+  if (level === 'd3r') {                  /* 3-digit, guaranteed carrying */
+    do { a = rnd(105, 989); b = rnd(3, 9); } while (a % 10 * b < 10);
+    return [a, b];
+  }
+  /* mix */
+  var levels = ['facts', 'd2nr', 'd2r', 'd3nr', 'd3r'];
+  return genPair(levels[rnd(0, levels.length - 1)]);
+}
+
+function newRandom(){
+  var level = document.getElementById('level').value;
+  var wrap = document.getElementById('sec9');
+  wrap.innerHTML = '';
+  randItems = [];
+  document.getElementById('fb9').className = 'fb';
+
+  for (var i = 0; i < 12; i++) {
+    var p = genPair(level);
+    var a = p[0], b = p[1], ans = a * b;
+    var box = document.createElement('div');
+    box.className = 'sum';
+    box.innerHTML =
+      '<div class="lbl">' + a + ' × ' + b + '</div>' +
+      '<div class="a">' + a + '</div>' +
+      '<div class="b">' + b + '</div><hr>';
+    var inp = makeInput(ans);
+    box.appendChild(inp);
+    var key = document.createElement('div');
+    key.className = 'key';
+    key.textContent = '= ' + ans;
+    box.appendChild(key);
+    wrap.appendChild(box);
+    randItems.push({ input: inp, key: key, ans: ans });
+  }
+  updatePill(9, 0, 12);
+}
+
+function checkRandom(){
+  var right = 0, blank = 0;
+  randItems.forEach(function(it){
+    it.input.classList.remove('right','miss');
+    var v = it.input.value.replace(/[\s,]/g,'');
+    if (v === '') { blank++; return; }
+    if (parseInt(v, 10) === it.ans) { it.input.classList.add('right'); right++; }
+    else { it.input.classList.add('miss'); it.key.classList.add('show'); }
+  });
+  report(9, right, randItems.length, blank);
+}
+function keyRandom(){ randItems.forEach(function(it){ it.key.classList.add('show'); }); }
+
+/* =============== check / report =============== */
+function checkSec(n){
+  var list = SEC[n] || [];
+  var right = 0, blank = 0;
+  list.forEach(function(it){
+    it.input.classList.remove('right','miss');
+    var v = it.input.value.replace(/[\s,]/g,'');
+    if (v === '') { blank++; return; }
+    if (parseInt(v, 10) === it.ans) { it.input.classList.add('right'); right++; }
+    else {
+      it.input.classList.add('miss');
+      if (it.key) it.key.classList.add('show');
+    }
+  });
+  report(n, right, list.length, blank);
+}
+
+function keySec(n){
+  (SEC[n] || []).forEach(function(it){
+    if (it.key) it.key.classList.add('show');
+    else if (!it.input.value) { it.input.value = it.ans; it.input.classList.add('right'); }
+  });
+}
+
+function report(n, right, total, blank){
+  var fb = document.getElementById('fb' + n);
+  fb.className = 'fb show ' + (right === total ? 'ok' : 'no');
+  fb.innerHTML = (right === total ? '🏆 ' : '📘 ') +
+    '<b>' + right + ' / ' + total + ' correct</b>' +
+    (blank ? ' &nbsp;(ยังไม่ได้ตอบ ' + blank + ' ข้อ)' : '') +
+    (right === total ? ' — Perfect! เก่งมากเลย' : ' — ข้อสีแดงคือยังไม่ถูก ลองคิดใหม่อีกทีนะ');
+  updatePill(n, right, total);
+  updateTotal();
+}
+
+function updatePill(n, right, total){
+  var el = document.getElementById('p' + n);
+  if (el) el.textContent = right + ' / ' + total;
+}
+
+function updateTotal(){
+  var right = 0, total = 0;
+  for (var n = 1; n <= 8; n++) {
+    (SEC[n] || []).forEach(function(it){
+      total++;
+      if (it.input.classList.contains('right')) right++;
+    });
+  }
+  randItems.forEach(function(it){
+    total++;
+    if (it.input.classList.contains('right')) right++;
+  });
+  document.getElementById('tsc').textContent = right;
+  document.getElementById('ttot').textContent = total;
+}
+
+/* init pills + first random set */
+for (var n = 1; n <= 8; n++) updatePill(n, 0, (SEC[n] || []).length);
+newRandom();
+updateTotal();
+</script>
+</body>
+</html>

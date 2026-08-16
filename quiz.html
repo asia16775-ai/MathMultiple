@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Test — Unit 5 Multiplication</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .bar{height:14px;background:rgba(255,255,255,.35);border-radius:999px;overflow:hidden;margin-top:8px;}
+  .bar > i{display:block;height:100%;width:0;background:#ffd54f;transition:width .3s;}
+  .result{display:none;text-align:center;padding:26px;}
+  .result.show{display:block;}
+  .result .big{font-size:52px;font-family:'Mali',sans-serif;}
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 5 Multiplication</span>
+  <h1>🏆 Final Test</h1>
+  <p>20 questions • กดเลือกคำตอบแล้วรู้เฉลยทันที</p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="practice.html">✏️ Practice</a>
+    <a href="lesson1.html">📖 Tables</a>
+  </nav>
+
+  <div class="score" id="score">
+    Score: <b id="sc">0</b> / <b id="tot">0</b>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+
+  <div class="card">
+    <h2>Let's Review… — เลือกคำตอบที่ถูกต้อง</h2>
+    <div id="quiz"></div>
+  </div>
+
+  <div class="card result" id="result">
+    <div class="big" id="rbig">🎉</div>
+    <h2 style="justify-content:center" id="rtitle"></h2>
+    <p id="rtext"></p>
+    <button class="btn" onclick="location.reload()">Try again</button>
+    <a class="btn ghost" style="text-decoration:none;display:inline-block" href="practice.html">Go and practise more</a>
+  </div>
+
+  <nav class="crumb" style="margin-top:20px">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="practice.html">✏️ Practice 150+ problems</a>
+  </nav>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+var QUESTIONS = [
+  { q: 'What is the <b>product</b> of 3 and 9?', opts: ['12','27','36','21'], ans: 1,
+    why: '3 × 9 = 27' },
+  { q: 'What is the <b>product</b> of 4 and 8?', opts: ['32','12','4','24'], ans: 0,
+    why: '4 × 8 = 32' },
+  { q: 'Find the <b>product</b> of 6 and 7.', opts: ['13','36','42','48'], ans: 2,
+    why: '6 × 7 = 42 (6 sevens = 42)' },
+  { q: 'Find the <b>product</b> of 91 and 8.', opts: ['99','728','178','718'], ans: 1,
+    why: 'ones 1 × 8 = 8 • tens 9 × 8 = 72 → 728' },
+  { q: 'Find the <b>product</b> of 432 and 2.', opts: ['864','654','444','834'], ans: 0,
+    why: 'ones 2×2 = 4 • tens 3×2 = 6 • hundreds 4×2 = 8 → 864 (no regrouping)' },
+
+  { q: '6 + 6 + 6 + 6 + 6 = ?  Which multiplication is this?', opts: ['5 × 6 = 30','6 × 6 = 36','4 × 6 = 24','5 × 5 = 25'], ans: 0,
+    why: 'Five groups of 6 → 5 × 6 = 30' },
+  { q: '9 sevens = ?', opts: ['54','63','72','56'], ans: 1,
+    why: '9 × 7 = 63' },
+  { q: '8 × 8 = ?', opts: ['56','63','64','72'], ans: 2,
+    why: '8 eights = 64' },
+  { q: 'If 7 × 9 = 63, then 9 × 7 = ?', opts: ['63','72','79','54'], ans: 0,
+    why: 'Order does not change the product. สลับที่กันได้ ผลคูณเท่าเดิม' },
+  { q: '10 nines = ?', opts: ['81','90','99','109'], ans: 1,
+    why: '10 × 9 = 90' },
+
+  { q: 'Which one needs <b>regrouping</b> (carrying)?', opts: ['23 × 3','12 × 4','27 × 6','101 × 5'], ans: 2,
+    why: '27 × 6: ones 7 × 6 = 42 which is more than 9, so we must carry. The others give 9 or less in every column.' },
+  { q: '34 × 3 = ?', opts: ['92','102','96','112'], ans: 1,
+    why: 'ones 4×3 = 12 → write 2 carry 1 • tens 3×3 = 9, +1 = 10 → 102' },
+  { q: '536 × 2 = ?', opts: ['1062','1072','1172','962'], ans: 1,
+    why: 'ones 6×2 = 12 → 2 carry 1 • tens 3×2 = 6, +1 = 7 • hundreds 5×2 = 10 → 1072' },
+  { q: '603 × 4 = ?', opts: ['2412','2402','2812','2410'], ans: 0,
+    why: 'ones 3×4 = 12 → 2 carry 1 • tens 0×4 = 0, +1 = 1 • hundreds 6×4 = 24 → 2412' },
+  { q: '299 × 5 = ?', opts: ['1045','1495','1595','1450'], ans: 1,
+    why: 'ones 9×5 = 45 → 5 carry 4 • tens 9×5 = 45, +4 = 49 → 9 carry 4 • hundreds 2×5 = 10, +4 = 14 → 1495' },
+
+  { q: 'There are 15 erasers in a box. How many erasers are in <b>9 such boxes</b>?', opts: ['125','135','145','150'], ans: 1,
+    why: '15 × 9 = 135 erasers' },
+  { q: 'Lucy has 6 baskets of apples. Each basket has 25 apples. How many apples does Lucy have?', opts: ['125','130','150','156'], ans: 2,
+    why: '6 × 25 = 150 apples' },
+  { q: 'Mr. Kumar has 8 tennis balls. Mr. Tay has <b>3 times as many</b>. How many does Mr. Tay have?', opts: ['11','16','24','32'], ans: 2,
+    why: '8 × 3 = 24 tennis balls' },
+  { q: 'Peter bought 7 movie tickets. Each ticket cost $6. How much did he spend <b>altogether</b>?', opts: ['$13','$42','$36','$49'], ans: 1,
+    why: '7 × 6 = $42' },
+  { q: 'There are 12 pens in one packet. Lisa bought 9 packets. How many pens <b>altogether</b>?', opts: ['21','98','108','118'], ans: 2,
+    why: 'ones 2×9 = 18 → 8 carry 1 • tens 1×9 = 9, +1 = 10 → 108 pens' }
+];
+
+var score = 0, answered = 0;
+var TOTAL = QUESTIONS.length;
+document.getElementById('tot').textContent = TOTAL;
+
+var LABELS = ['a','b','c','d'];
+var quizEl = document.getElementById('quiz');
+
+QUESTIONS.forEach(function(item, qi){
+  var box = document.createElement('div');
+  box.className = 'q';
+
+  var p = document.createElement('p');
+  p.className = 'qtext';
+  p.innerHTML = '<span class="qnum">' + (qi + 1) + '</span>' + item.q;
+  box.appendChild(p);
+
+  var opts = document.createElement('div');
+  opts.className = 'opts';
+  item.opts.forEach(function(text, oi){
+    var b = document.createElement('button');
+    b.className = 'opt';
+    b.type = 'button';
+    b.textContent = LABELS[oi] + '. ' + text;
+    b.onclick = function(){ pick(box, item, oi); };
+    opts.appendChild(b);
+  });
+  box.appendChild(opts);
+
+  var fb = document.createElement('div');
+  fb.className = 'fb';
+  box.appendChild(fb);
+
+  quizEl.appendChild(box);
+});
+
+function pick(box, item, chosen){
+  var buttons = box.querySelectorAll('.opt');
+  if (buttons[0].disabled) return;
+
+  var correct = (chosen === item.ans);
+  buttons.forEach(function(b, i){
+    b.disabled = true;
+    if (i === item.ans) b.classList.add('correct');
+    else if (i === chosen) b.classList.add('wrong');
+  });
+
+  var fb = box.querySelector('.fb');
+  fb.className = 'fb show ' + (correct ? 'ok' : 'no');
+  fb.innerHTML = (correct ? '✅ <b>Correct!</b> ' : '❌ <b>Not quite.</b> The green one is right.<br>')
+    + '<b>Working:</b> ' + item.why;
+
+  if (correct) score++;
+  answered++;
+  document.getElementById('sc').textContent = score;
+  document.getElementById('bar').style.width = (answered / TOTAL * 100) + '%';
+  if (answered === TOTAL) finish();
+}
+
+function finish(){
+  var r = document.getElementById('result');
+  var pct = score / TOTAL * 100;
+  var big = '🎉', title = 'Well done!', text = '';
+  if (pct === 100) { big = '🏆'; title = 'Perfect score!'; text = 'You are a multiplication master! เก่งมาก ๆ เลย'; }
+  else if (pct >= 80) { big = '🌟'; title = 'Excellent!'; text = 'Almost perfect — check the ones you missed. ทำได้ดีมาก'; }
+  else if (pct >= 60) { big = '💪'; title = 'Good effort!'; text = 'Go back to the lessons for the tricky ones, then try again. อ่านทบทวนแล้วลองใหม่นะ'; }
+  else { big = '📚'; title = 'Keep practising!'; text = 'Start with the times tables in Lesson 1, then the Practice page. ค่อย ๆ ฝึกไปทีละนิด เดี๋ยวก็เก่ง'; }
+  document.getElementById('rbig').textContent = big;
+  document.getElementById('rtitle').textContent = title + '  (' + score + '/' + TOTAL + ')';
+  document.getElementById('rtext').textContent = text;
+  r.classList.add('show');
+  r.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

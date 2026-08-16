@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 4 — Word Problems</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 5 Multiplication</span>
+  <h1>Word Problems</h1>
+  <p>Lesson 4 • โจทย์ปัญหาการคูณ</p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="lesson3.html">⬅️ Lesson 3</a>
+    <a href="practice.html">➡️ Practice</a>
+  </nav>
+
+  <div class="card">
+    <h2>🔑 Words that tell you to multiply</h2>
+    <p class="th">เจอคำพวกนี้ในโจทย์ ให้คิดถึงการคูณไว้ก่อนเลย</p>
+    <table>
+      <thead><tr><th>English</th><th>ภาษาไทย</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><b>altogether / in total</b></td><td>ทั้งหมด รวมกัน</td><td>How many pens altogether?</td></tr>
+        <tr><td><b>each</b></td><td>แต่ละ ละ</td><td>Each box has 15 erasers.</td></tr>
+        <tr><td><b>twice as many as</b></td><td>มากเป็นสองเท่า</td><td>× 2</td></tr>
+        <tr><td><b>3 times as many as</b></td><td>มากเป็นสามเท่า</td><td>× 3</td></tr>
+        <tr><td><b>equal groups</b></td><td>กลุ่มที่เท่ากัน</td><td>9 equal groups of 8</td></tr>
+        <tr><td><b>such boxes / such baskets</b></td><td>กล่องแบบนี้ ตะกร้าแบบนี้</td><td>in 9 such boxes</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <b>4 steps to solve / วิธีทำ 4 ขั้น:</b>
+      <ol style="margin:8px 0 0">
+        <li><b>Read</b> and find the two numbers. <span class="th">อ่านโจทย์ หาตัวเลข 2 ตัว</span></li>
+        <li><b>Draw</b> a bar model. <span class="th">วาดแผนภาพแท่ง</span></li>
+        <li><b>Write</b> the number sentence and multiply. <span class="th">เขียนประโยคสัญลักษณ์ แล้วคูณ</span></li>
+        <li><b>Answer</b> in a full sentence with the unit. <span class="th">ตอบเป็นประโยค พร้อมหน่วย</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎾 Worked Example 1 — "times as many as"</h2>
+    <div class="wp">
+      <p class="story">
+        Mr. Kumar has <b>8</b> tennis balls.<br>
+        Mr. Tay has <b>3 times as many</b> tennis balls as Mr. Kumar.<br>
+        <u>How many tennis balls does Mr. Tay have?</u>
+      </p>
+      <p style="margin:12px 0 4px"><b>Mr Kumar</b></p>
+      <div class="bar"><span class="one">8</span></div>
+      <p style="margin:12px 0 4px"><b>Mr Tay</b> (3 equal parts = ?)</p>
+      <div class="bar"><span>8</span><span>8</span><span>8</span></div>
+      <p style="font-size:21px;margin-top:14px">
+        <b>8 × 3 = 24</b>
+      </p>
+      <p style="color:#00695c;font-weight:700;font-size:19px">Mr. Tay has 24 tennis balls.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🖊️ Worked Example 2 — "altogether"</h2>
+    <div class="wp">
+      <p class="story">
+        There are <b>12 pens</b> in one packet.<br>
+        Lisa bought <b>9 packets</b> of pens.<br>
+        <u>How many pens did Lisa buy altogether?</u>
+      </p>
+      <p style="margin:12px 0 4px"><b>1 packet</b></p>
+      <div class="bar"><span class="one">12</span></div>
+      <p style="margin:12px 0 4px"><b>9 packets</b> = ?</p>
+      <div class="bar">
+        <span>12</span><span>12</span><span>12</span><span>12</span><span>12</span>
+        <span>12</span><span>12</span><span>12</span><span>12</span>
+      </div>
+      <p style="font-size:21px;margin-top:14px"><b>12 × 9 = 108</b></p>
+      <p style="color:#00695c;font-weight:700;font-size:19px">Lisa bought 108 pens altogether.</p>
+      <div class="tip" style="margin-top:12px">
+        Working: ones 2×9 = 18 → write 8, carry 1 &nbsp;•&nbsp; tens 1×9 = 9, +1 = 10 → <b>108</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✏️ Now you try — solve the word problems</h2>
+    <p class="th">อ่านโจทย์ เขียนวิธีคิดในสมุด แล้วพิมพ์คำตอบตัวเลขลงในช่อง กดตรวจได้เลย</p>
+    <div id="wpList"></div>
+
+    <button class="btn" onclick="checkAll()">Check my answers</button>
+    <button class="btn ghost" onclick="showAllKeys()">Show all answers</button>
+    <div class="fb" id="fb"></div>
+  </div>
+
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="practice.html">➡️ Next: Practice 150+ problems</a>
+    <a href="quiz.html">🏆 Final Test</a>
+  </nav>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+var PROBLEMS = [
+  { story: 'Peter bought <b>7</b> movie tickets for his friends.<br>Each ticket cost <b>$6</b>.<br><u>How much did Peter spend altogether?</u>',
+    sentence: '7 × 6 = 42', unit: 'dollars', ans: 42,
+    say: 'Peter spent $42 altogether.' },
+
+  { story: 'Some pupils at Sunshine Primary School are going on a field trip.<br>The pupils are divided into <b>9 equal groups</b>.<br>There are <b>8 pupils</b> in each group.<br><u>How many pupils are going on the field trip altogether?</u>',
+    sentence: '9 × 8 = 72', unit: 'pupils', ans: 72,
+    say: 'There are 72 pupils going on the field trip altogether.' },
+
+  { story: 'There are <b>15 erasers</b> in a box.<br><u>How many erasers are there in 9 such boxes?</u>',
+    sentence: '15 × 9 = 135', unit: 'erasers', ans: 135,
+    say: 'There are 135 erasers in 9 such boxes.' },
+
+  { story: 'Lucy has <b>6 baskets</b> of apples.<br>Each basket has <b>25 apples</b>.<br><u>How many apples does Lucy have?</u>',
+    sentence: '6 × 25 = 150', unit: 'apples', ans: 150,
+    say: 'Lucy has 150 apples.' },
+
+  { story: 'A farmer has <b>8 pens</b> of pigs.<br>Each pen has <b>7 pigs</b>.<br><u>How many pigs are there altogether?</u>',
+    sentence: '8 × 7 = 56', unit: 'pigs', ans: 56,
+    say: 'There are 56 pigs altogether.' },
+
+  { story: 'One packet of stickers has <b>24 stickers</b>.<br>Nan buys <b>4 packets</b>.<br><u>How many stickers does Nan have?</u>',
+    sentence: '24 × 4 = 96', unit: 'stickers', ans: 96,
+    say: 'Nan has 96 stickers.' },
+
+  { story: 'Ben reads <b>18 pages</b> every day.<br><u>How many pages does he read in 9 days?</u>',
+    sentence: '18 × 9 = 162', unit: 'pages', ans: 162,
+    say: 'Ben reads 162 pages in 9 days.' },
+
+  { story: 'A box holds <b>126 marbles</b>.<br><u>How many marbles are there in 3 such boxes?</u>',
+    sentence: '126 × 3 = 378', unit: 'marbles', ans: 378,
+    say: 'There are 378 marbles in 3 such boxes.' },
+
+  { story: 'Mali has <b>9</b> ribbons.<br>Ploy has <b>twice as many</b> ribbons as Mali.<br><u>How many ribbons does Ploy have?</u>',
+    sentence: '9 × 2 = 18', unit: 'ribbons', ans: 18,
+    say: 'Ploy has 18 ribbons.' },
+
+  { story: 'There are <b>235 chickens</b> on one farm.<br>Another farm has <b>3 times as many</b> chickens.<br><u>How many chickens does the other farm have?</u>',
+    sentence: '235 × 3 = 705', unit: 'chickens', ans: 705,
+    say: 'The other farm has 705 chickens.' },
+
+  { story: 'A school bus carries <b>45 students</b>.<br><u>How many students can 6 such buses carry?</u>',
+    sentence: '45 × 6 = 270', unit: 'students', ans: 270,
+    say: '6 buses can carry 270 students.' },
+
+  { story: 'One notebook costs <b>39 baht</b>.<br>Mother buys <b>8 notebooks</b>.<br><u>How much does she pay altogether?</u>',
+    sentence: '39 × 8 = 312', unit: 'baht', ans: 312,
+    say: 'She pays 312 baht altogether.' }
+];
+
+var items = [];
+var wrap = document.getElementById('wpList');
+
+PROBLEMS.forEach(function(p, i){
+  var box = document.createElement('div');
+  box.className = 'wp';
+  box.innerHTML =
+    '<p class="story"><span class="qnum">' + (i + 1) + '</span> ' + p.story + '</p>' +
+    '<div class="fill1" style="margin-top:12px;max-width:340px">' +
+      '<span>Answer:</span>' +
+      '<input type="text" inputmode="numeric" placeholder="?">' +
+      '<span>' + p.unit + '</span>' +
+    '</div>' +
+    '<div class="answer">' + p.sentence + '<br>' + p.say + '</div>';
+
+  wrap.appendChild(box);
+  items.push({
+    input: box.querySelector('input'),
+    key: box.querySelector('.answer'),
+    ans: p.ans
+  });
+});
+
+function checkAll(){
+  var right = 0, blank = 0;
+  items.forEach(function(it){
+    it.input.classList.remove('right','miss');
+    var v = it.input.value.replace(/[\s,$]/g,'');
+    if (v === '') { blank++; return; }
+    if (parseInt(v, 10) === it.ans) { it.input.classList.add('right'); right++; it.key.classList.add('show'); }
+    else { it.input.classList.add('miss'); it.key.classList.add('show'); }
+  });
+  var fb = document.getElementById('fb');
+  fb.className = 'fb show ' + (right === items.length ? 'ok' : 'no');
+  fb.innerHTML = (right === items.length ? '🏆 ' : '📘 ') +
+    '<b>' + right + ' / ' + items.length + ' correct</b>' +
+    (blank ? ' &nbsp;(' + blank + ' left blank / ยังไม่ได้ตอบ ' + blank + ' ข้อ)' : '') +
+    (right === items.length ? ' — Perfect! เก่งมากเลย' : ' — read the working under each problem.');
+}
+
+function showAllKeys(){ items.forEach(function(it){ it.key.classList.add('show'); }); }
+</script>
+</body>
+</html>
