@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Test — Unit 7 Time</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .pbar { height:14px; background:rgba(255,255,255,.35); border-radius:999px; overflow:hidden; margin-top:8px; }
+  .pbar > i { display:block; height:100%; width:0; background:#ffd54f; transition:width .3s; }
+  .result { display:none; text-align:center; padding:26px; }
+  .result.show { display:block; }
+  .result .big { font-size:52px; font-family:'Mali',sans-serif; }
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 7 • Time</span>
+  <h1>🏆 Final Test — Unit 7</h1>
+  <p>20 questions • กดเลือกคำตอบแล้วรู้เฉลยทันที</p>
+  <div class="pbar"><i id="pb"></i></div>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="unit7-practice.html">✏️ Practice</a>
+    <a href="unit7-lesson1.html">📖 Lessons</a>
+  </nav>
+
+  <div class="card">
+    <h2>📋 อ่านก่อนเริ่ม</h2>
+    <p>
+      ข้อสอบชุดนี้รวมทุกเรื่องใน Unit 7 — อ่านนาฬิกา · past/to · แปลงเวลา · ช่วงเวลา · บวกลบเวลา
+      <span class="th">ทำได้ทีละข้อ กดตอบแล้วจะเห็นเฉลยพร้อมวิธีคิดทันที ทำเสร็จแล้วเลื่อนลงดูคะแนนรวม</span>
+    </p>
+  </div>
+
+  <div id="quiz"></div>
+
+  <div class="card result" id="res">
+    <div class="big" id="rbig"></div>
+    <h2 id="rtitle"></h2>
+    <p id="rmsg" style="font-size:19px"></p>
+    <p><button class="btn" onclick="location.reload()">🔁 ทำใหม่อีกรอบ</button></p>
+  </div>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script src="clock.js"></script>
+<script>
+/* clock: [h, m] → แสดงหน้าปัดในข้อนั้น */
+var Q = [
+  { c: [1, 0], q: 'What time is it?', o: ['1:00', '4:00', '10:00', '12:00'], a: 0,
+    why: 'เข็มสั้นชี้ 1 · เข็มยาวชี้ 12 = <b>1:00</b> (one o’clock)' },
+  { c: [12, 30], q: 'What time is it?', o: ['half past 11', 'half past 12', 'half past 1', 'half past 2'], a: 1,
+    why: 'เข็มยาวชี้ 6 = ครึ่งชั่วโมง · เข็มสั้นผ่านเลข 12 มาแล้ว = <b>half past 12</b>' },
+  { c: [3, 40], q: 'What time is it?', o: ['3:08', '3:40', '8:03', '8:15'], a: 1,
+    why: 'เข็มสั้นอยู่ระหว่าง 3 กับ 4 → ชั่วโมงคือ <b>3</b> · เข็มยาวชี้ 8 → 8 × 5 = <b>40</b> นาที' },
+  { c: [9, 45], q: 'What time is it?', o: ['9:00', '9:09', '9:45', '9:50'], a: 2,
+    why: 'เข็มยาวชี้เลข 9 → 9 × 5 = <b>45</b> นาที (ไม่ใช่ 9 นาที!)' },
+  { c: [11, 10], q: 'What time is it?', o: ['11:02', '11:10', '2:11', '2:51'], a: 1,
+    why: 'เข็มสั้นชี้ 11 = ชั่วโมง · เข็มยาวชี้ 2 → 2 × 5 = <b>10</b> นาที' },
+  { c: [1, 6], q: 'What time does the clock show?', o: ['1:26', '1:06', '5:07', '5:01'], a: 1,
+    why: 'เข็มยาวเลย 12 มา 6 ขีดเล็ก = <b>6 นาที</b> → 1:06 อ่านว่า one o’six' },
+  { c: [10, 7], q: 'What time is it?',
+    o: ['7 minutes past 10', '10 minutes past 10', '7 minutes to 10', '10 minutes to 7'], a: 0,
+    why: 'ชั่วโมง 10 ผ่านมาแล้ว 7 นาที = <b>7 minutes past 10</b>' },
+  { c: [7, 45], q: 'Which one is correct?',
+    o: ['quarter past 7', 'quarter to 7', 'quarter to 8', 'half past 7'], a: 2,
+    why: '60 − 45 = 15 นาที และต้องเปลี่ยนเป็น<b>ชั่วโมงถัดไป</b> → <b>quarter to 8</b>' },
+  { c: [4, 15], q: 'Which one is correct?',
+    o: ['It is 4 o’clock.', 'It is quarter past 4.', 'It is 15 minutes before 5.', 'It is half past 4.'], a: 1,
+    why: 'เข็มยาวชี้ 3 = 15 นาที ผ่าน 4 มาแล้ว = <b>quarter past 4</b>' },
+
+  { q: 'Convert into minutes: <b>1 h 43 min</b>', o: ['103 minutes', '113 minutes', '123 minutes', '133 minutes'], a: 0,
+    why: '1 × 60 = 60 แล้ว 60 + 43 = <b>103 minutes</b>' },
+  { q: 'Convert into minutes: <b>4 h 07 min</b>', o: ['67 minutes', '127 minutes', '187 minutes', '247 minutes'], a: 3,
+    why: '4 × 60 = 240 แล้ว 240 + 7 = <b>247 minutes</b>' },
+  { q: 'Convert into minutes: <b>1 h 22 min</b>', o: ['112 minutes', '102 minutes', '92 minutes', '82 minutes'], a: 3,
+    why: '60 + 22 = <b>82 minutes</b>' },
+  { q: 'Convert to hours: <b>99 minutes</b>', o: ['0 h 9 min', '1 h 39 min', '2 h 29 min', '3 h 19 min'], a: 1,
+    why: '99 = 60 + 39 → <b>1 h 39 min</b>' },
+  { q: 'Convert to hours: <b>278 minutes</b>', o: ['0 h 78 min', '1 h 58 min', '4 h 38 min', '6 h 18 min'], a: 2,
+    why: '278 = 240 + 38 → <b>4 h 38 min</b> (240 = 4 ชั่วโมง)' },
+  { q: 'Convert to hours: <b>198 minutes</b>', o: ['5 h 58 min', '4 h 38 min', '3 h 18 min', '1 h 98 min'], a: 2,
+    why: '198 = 180 + 18 → <b>3 h 18 min</b> · ข้อ “1 h 98 min” ผิดเพราะนาทีต้องน้อยกว่า 60' },
+
+  { q: 'Lunch break starts at <b>11:50 A.M.</b> and ends at <b>12:50 P.M.</b><br>How long was the lunch?',
+    o: ['50 minutes', '1 hour', '1 h 5 min', '1 h 50 min'], a: 1,
+    why: 'นาทีเท่ากันทั้งคู่ (50) → เอาชั่วโมงลบกัน 12 − 11 = <b>1 hour</b>' },
+  { q: 'Grade 3 students start dance practice at <b>10:30 A.M.</b> and end at <b>11:10 A.M.</b><br>How long was the dance?',
+    o: ['40 minutes', '1 hour', '1 h 10 min', '1 h 30 min'], a: 0,
+    why: '10:30 → 11:00 คือ 30 นาที แล้ว 11:00 → 11:10 อีก 10 นาที รวม <b>40 minutes</b>' },
+  { q: 'We eat lunch at 12:00. Is it A.M. or P.M.?', o: ['12:00 A.M.', '12:00 P.M.'], a: 1,
+    why: 'เที่ยงวันเป็นจุดเริ่มของ <b>P.M.</b> ส่วน 12:00 A.M. คือเที่ยงคืน' },
+  { q: 'Anna spent <b>1 h 30 min</b> on homework and <b>1 h 15 min</b> watching TV.<br>How much time altogether?',
+    o: ['2 h 15 min', '2 h 45 min', '3 h 45 min', '2 h 05 min'], a: 1,
+    why: 'ชั่วโมง 1 + 1 = 2 · นาที 30 + 15 = 45 → <b>2 h 45 min</b>' },
+  { q: 'Peter took <b>2 h 10 min</b> for Math and <b>45 min less</b> for English.<br>How long did English take?',
+    o: ['1 h 25 min', '1 h 35 min', '2 h 55 min', '1 h 65 min'], a: 0,
+    why: 'ยืม 1 ชั่วโมง: 2 h 10 min = 1 h 70 min แล้ว 70 − 45 = 25 → <b>1 h 25 min</b>' }
+];
+
+var TOTAL = Q.length, score = 0, done = 0;
+
+(function () {
+  var root = document.getElementById('quiz');
+  Q.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'q';
+    var cid = 'qc' + i;
+    var h = '<div class="qtext"><span class="qnum">' + (i + 1) + '</span>' + it.q + '</div>';
+    if (it.c) h += '<div style="text-align:center;margin:12px 0"><span id="' + cid + '"></span></div>';
+    h += '<div class="opts">';
+    it.o.forEach(function (t, j) { h += '<button class="opt" data-j="' + j + '">' + t + '</button>'; });
+    h += '</div><div class="fb"></div>';
+    d.innerHTML = h;
+    root.appendChild(d);
+    if (it.c) Clock.draw(cid, it.c[0], it.c[1], { size: 190 });
+
+    var fb = d.querySelector('.fb');
+    d.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ok = +b.dataset.j === it.a;
+        d.querySelectorAll('.opt').forEach(function (x) {
+          x.disabled = true;
+          if (+x.dataset.j === it.a) x.classList.add('correct');
+        });
+        if (!ok) b.classList.add('wrong');
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = (ok ? '✅ ถูกต้อง! ' : '❌ คำตอบคือ <b>' + it.o[it.a] + '</b> — ') + it.why;
+        if (ok) score++;
+        done++;
+        document.getElementById('pb').style.width = (done / TOTAL * 100) + '%';
+        if (done === TOTAL) finish();
+      });
+    });
+  });
+})();
+
+function finish() {
+  var r = document.getElementById('res'), pc = Math.round(score / TOTAL * 100);
+  r.classList.add('show');
+  document.getElementById('rbig').textContent = score + ' / ' + TOTAL;
+  document.getElementById('rtitle').textContent =
+    pc === 100 ? '🏆 เต็ม! เก่งมากกกก' :
+    pc >= 80 ? '🎉 ยอดเยี่ยม พร้อมสอบแล้ว' :
+    pc >= 60 ? '💪 ดีแล้ว อีกนิดเดียว' : '📖 กลับไปทบทวนอีกรอบนะ';
+  document.getElementById('rmsg').innerHTML =
+    pc === 100 ? 'ตอบถูกทุกข้อเลย! ไปสอบได้อย่างมั่นใจ' :
+    pc >= 80 ? 'เหลืออีกไม่กี่ข้อ ลองเลื่อนขึ้นไปอ่านเฉลยข้อที่ผิดอีกรอบ' :
+    'ลองกลับไปอ่าน <a href="unit7-lesson1.html">Lesson 1–4</a> แล้วมาทำใหม่อีกรอบ ทำซ้ำ ๆ จะเก่งขึ้นแน่นอน';
+  r.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

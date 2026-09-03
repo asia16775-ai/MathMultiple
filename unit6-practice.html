@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice — Unit 6 Lines</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .sec-head { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .pill { background:#e1f5fe; color:#01579b; border-radius:999px; padding:4px 14px; font-size:15px; font-weight:700; }
+  .picker { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+  .picker button {
+    font-family:inherit; font-size:16px; cursor:pointer; background:#fff;
+    border:2px solid #cfd8dc; border-radius:10px; padding:7px 12px;
+  }
+  .picker button:hover:not(:disabled) { background:#e1f5fe; border-color:#0277bd; }
+  .picker button:disabled { cursor:default; opacity:.5; }
+  .picker button.ok { background:#c8e6c9; border-color:#2e7d32; opacity:1; font-weight:700; }
+  .picker button.no { background:#ffcdd2; border-color:#d32f2f; opacity:1; }
+  .sticky {
+    position:sticky; top:0; z-index:5; background:#0277bd; color:#fff;
+    padding:10px 16px; border-radius:0 0 16px 16px; text-align:center;
+    font-family:'Mali',sans-serif; font-size:20px; box-shadow:0 4px 12px rgba(0,0,0,.16);
+  }
+  .countbox { display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+  .countbox input {
+    font-family:inherit; font-size:22px; font-weight:700; text-align:center;
+    width:90px; padding:8px; border:2px solid #dfe6ea; border-radius:10px;
+  }
+  .countbox input.right { background:#c8e6c9; border-color:#2e7d32; }
+  .countbox input.miss  { background:#ffcdd2; border-color:#d32f2f; }
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Unit 6 • Lines</span>
+  <h1>✏️ Practice — Unit 6</h1>
+  <p>34 questions • กดตอบแล้วรู้เฉลยทันที พร้อมเหตุผล</p>
+</header>
+
+<div class="sticky">คะแนน <span id="sc">0</span> / <span id="tot">34</span></div>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="unit6.html">📖 Unit 6 Lesson</a>
+    <a href="unit7-lesson1.html">🕐 Unit 7 Time</a>
+  </nav>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 1 — Name the figure</h2><span class="pill">6 ข้อ</span></div>
+    <p>ดูรูปแล้วเลือกว่าเป็นอะไร <span class="th">• ดูที่ปลายเส้น: จุดกลม 2 ข้าง = segment, จุดกลม 1 + ลูกศร 1 = ray, ลูกศร 2 ข้าง = line</span></p>
+    <div class="figs" id="p1"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 2 — Perpendicular? ⊥</h2><span class="pill">6 ข้อ</span></div>
+    <p>เส้นคู่นี้<b>ตั้งฉาก</b>กันหรือไม่ กด ✔ ถ้าใช่ กด ✘ ถ้าไม่ใช่</p>
+    <div class="figs" id="p2"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 3 — Parallel? ∥</h2><span class="pill">6 ข้อ</span></div>
+    <p>เส้นคู่นี้<b>ขนาน</b>กันหรือไม่ <span class="th">• ขนาน = ยืดไปไกลแค่ไหนก็ไม่มีวันเจอกัน</span></p>
+    <div class="figs" id="p3"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 4 — Which figure has perpendicular lines?</h2><span class="pill">4 ข้อ</span></div>
+    <p>เลือกรูปที่มี<b>เส้นตั้งฉาก</b> <span class="th">• มีมุมฉาก 🟩 ตรงจุดตัดเท่านั้น</span></p>
+    <div id="p4"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 5 — Name the lines</h2><span class="pill">4 ข้อ</span></div>
+    <p>ดูรูปสี่เหลี่ยม ABCD แล้วเลือกสัญลักษณ์ที่ถูก <b>⊥</b> (ตั้งฉาก) หรือ <b>∥</b> (ขนาน)</p>
+    <div class="fig" style="max-width:300px;margin:0 auto 6px">
+      <svg viewBox="0 0 200 160" width="200" height="160">
+        <rect x="40" y="30" width="120" height="100" fill="none" stroke="#1565c0" stroke-width="5"/>
+        <text x="26" y="26" font-size="20" font-family="Mali,sans-serif" fill="#01579b">A</text>
+        <text x="166" y="26" font-size="20" font-family="Mali,sans-serif" fill="#01579b">B</text>
+        <text x="166" y="150" font-size="20" font-family="Mali,sans-serif" fill="#01579b">C</text>
+        <text x="26" y="150" font-size="20" font-family="Mali,sans-serif" fill="#01579b">D</text>
+      </svg>
+    </div>
+    <div id="p5"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 6 — Horizontal, Vertical or Slanted?</h2><span class="pill">6 ข้อ</span></div>
+    <p>เส้นนี้อยู่ในแนวไหน <span class="th">• horizontal = นอน · vertical = ตั้ง · slanted = เอียง</span></p>
+    <div class="figs" id="p6"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-head"><h2>Part 7 — Count the lines in the house 🏠</h2><span class="pill">2 ข้อ</span></div>
+    <p>นับเส้นในรูปบ้าน แล้วพิมพ์จำนวนลงในช่อง <span class="th">• หลังคาเอียง 2 เส้น ไม่นับทั้งแนวตั้งและแนวนอนนะ</span></p>
+    <div style="text-align:center">
+      <svg viewBox="0 0 200 150" width="290" height="218" style="max-width:100%;height:auto">
+        <!-- ceiling -->
+        <line x1="30" y1="70" x2="170" y2="70" stroke="#37474f" stroke-width="4"/>
+        <!-- roof -->
+        <line x1="30" y1="70" x2="100" y2="25" stroke="#c62828" stroke-width="4"/>
+        <line x1="100" y1="25" x2="170" y2="70" stroke="#c62828" stroke-width="4"/>
+        <!-- walls -->
+        <line x1="40" y1="70" x2="40" y2="130" stroke="#37474f" stroke-width="4"/>
+        <line x1="160" y1="70" x2="160" y2="130" stroke="#37474f" stroke-width="4"/>
+        <!-- floor -->
+        <line x1="40" y1="130" x2="160" y2="130" stroke="#37474f" stroke-width="4"/>
+        <!-- door -->
+        <line x1="88" y1="95" x2="88" y2="130" stroke="#6d4c41" stroke-width="4"/>
+        <line x1="118" y1="95" x2="118" y2="130" stroke="#6d4c41" stroke-width="4"/>
+        <line x1="88" y1="95" x2="118" y2="95" stroke="#6d4c41" stroke-width="4"/>
+        <!-- window -->
+        <line x1="55" y1="85" x2="55" y2="110" stroke="#0288d1" stroke-width="4"/>
+        <line x1="75" y1="85" x2="75" y2="110" stroke="#0288d1" stroke-width="4"/>
+        <line x1="55" y1="85" x2="75" y2="85" stroke="#0288d1" stroke-width="4"/>
+        <line x1="55" y1="110" x2="75" y2="110" stroke="#0288d1" stroke-width="4"/>
+      </svg>
+    </div>
+    <div id="p7"></div>
+  </div>
+
+  <div class="card" id="finish" style="display:none;text-align:center">
+    <h2 id="ftitle"></h2>
+    <p id="fmsg" style="font-size:19px"></p>
+  </div>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+/* ---------------- ตัวช่วยวาดรูป ---------------- */
+function arrow(x, y, ux, uy, c) {
+  var bx = x - 13 * ux, by = y - 13 * uy, px = -uy, py = ux;
+  return '<polygon points="' + x + ',' + y + ' ' + (bx + 6 * px) + ',' + (by + 6 * py) +
+    ' ' + (bx - 6 * px) + ',' + (by - 6 * py) + '" fill="' + c + '"/>';
+}
+/* seg: {x1,y1,x2,y2,c,s,e}  s/e = 'dot' | 'arrow' | undefined */
+function seg(o) {
+  var c = o.c || '#1565c0', dx = o.x2 - o.x1, dy = o.y2 - o.y1;
+  var L = Math.sqrt(dx * dx + dy * dy), ux = dx / L, uy = dy / L, s = '';
+  var ax1 = o.x1, ay1 = o.y1, ax2 = o.x2, ay2 = o.y2;
+  if (o.e === 'arrow') { ax2 = o.x2 - 10 * ux; ay2 = o.y2 - 10 * uy; }
+  if (o.s === 'arrow') { ax1 = o.x1 + 10 * ux; ay1 = o.y1 + 10 * uy; }
+  s += '<line x1="' + ax1 + '" y1="' + ay1 + '" x2="' + ax2 + '" y2="' + ay2 +
+    '" stroke="' + c + '" stroke-width="5" stroke-linecap="round"/>';
+  if (o.e === 'arrow') s += arrow(o.x2, o.y2, ux, uy, c);
+  if (o.s === 'arrow') s += arrow(o.x1, o.y1, -ux, -uy, c);
+  if (o.e === 'dot') s += '<circle cx="' + o.x2 + '" cy="' + o.y2 + '" r="7" fill="#c62828"/>';
+  if (o.s === 'dot') s += '<circle cx="' + o.x1 + '" cy="' + o.y1 + '" r="7" fill="#c62828"/>';
+  return s;
+}
+function svg(parts, w, h) {
+  w = w || 180; h = h || 130;
+  return '<svg viewBox="0 0 180 130" width="' + w + '" height="' + h + '">' + parts.join('') + '</svg>';
+}
+
+/* ---------------- คะแนน ---------------- */
+var TOTAL = 34, score = 0, done = 0;
+function mark(ok) {
+  score += ok ? 1 : 0; done++;
+  document.getElementById('sc').textContent = score;
+  if (done === TOTAL) {
+    var f = document.getElementById('finish');
+    f.style.display = 'block';
+    var pc = Math.round(score / TOTAL * 100);
+    document.getElementById('ftitle').textContent =
+      pc === 100 ? '🏆 เต็ม! ' + score + '/' + TOTAL :
+      pc >= 80 ? '🎉 เก่งมาก ' + score + '/' + TOTAL :
+      pc >= 60 ? '💪 ดีแล้ว ' + score + '/' + TOTAL : '📖 ลองอีกครั้งนะ ' + score + '/' + TOTAL;
+    document.getElementById('fmsg').innerHTML =
+      pc === 100 ? 'ตอบถูกทุกข้อเลย พร้อมสอบ Unit 6 แล้ว!' :
+      pc >= 80 ? 'เหลืออีกนิดเดียว ลองกลับไปดูข้อที่ตอบผิดอีกรอบนะ' :
+      'กด <b>รีเฟรชหน้า</b> แล้วลองทำใหม่อีกรอบได้เลย ทำซ้ำ ๆ จะจำได้เอง';
+    f.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+/* ---------------- Part 1 — ชื่อของรูป ---------------- */
+var P1 = [
+  { p: ['<circle cx="90" cy="65" r="8" fill="#c62828"/>'], a: 'Point',
+    why: 'จุดเดียว ไม่มีความยาว = <b>Point</b>' },
+  { p: [seg({ x1: 25, y1: 65, x2: 155, y2: 65, s: 'dot', e: 'dot' })], a: 'Line segment',
+    why: 'มีจุดปลาย <b>2 ข้าง</b> = <b>Line segment</b>' },
+  { p: [seg({ x1: 25, y1: 65, x2: 165, y2: 65, s: 'dot', e: 'arrow' })], a: 'Ray',
+    why: 'จุดปลาย 1 ข้าง + ลูกศร 1 ข้าง = <b>Ray</b>' },
+  { p: [seg({ x1: 15, y1: 65, x2: 165, y2: 65, s: 'arrow', e: 'arrow' })], a: 'Line',
+    why: 'ลูกศร <b>2 ข้าง</b> ยาวไม่รู้จบทั้งสองทาง = <b>Line</b>' },
+  { p: [seg({ x1: 40, y1: 105, x2: 165, y2: 105, s: 'dot', e: 'arrow' }),
+        seg({ x1: 40, y1: 105, x2: 140, y2: 25, e: 'arrow' }),
+        '<path d="M 72 105 A 32 32 0 0 0 63 82" fill="none" stroke="#c62828" stroke-width="4"/>'], a: 'Angle',
+    why: 'รังสี 2 เส้นออกจากจุดเดียวกัน = <b>Angle</b>' },
+  { p: [seg({ x1: 90, y1: 20, x2: 90, y2: 112, s: 'dot', e: 'dot' })], a: 'Line segment',
+    why: 'ถึงจะตั้งขึ้น แต่มีจุดปลาย 2 ข้าง ก็ยังเป็น <b>Line segment</b>' }
+];
+var P1OPTS = ['Point', 'Line segment', 'Ray', 'Line', 'Angle'];
+
+(function () {
+  var root = document.getElementById('p1');
+  P1.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'fig';
+    var h = '<span class="num">' + (i + 1) + '</span>' + svg(it.p) + '<div class="picker">';
+    P1OPTS.forEach(function (t) { h += '<button data-t="' + t + '">' + t + '</button>'; });
+    h += '</div><div class="say"></div>';
+    d.innerHTML = h;
+    var say = d.querySelector('.say');
+    d.querySelectorAll('.picker button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ok = b.dataset.t === it.a;
+        d.querySelectorAll('.picker button').forEach(function (x) {
+          x.disabled = true;
+          if (x.dataset.t === it.a) x.classList.add('ok');
+        });
+        if (!ok) b.classList.add('no');
+        d.classList.add(ok ? 'right' : 'miss');
+        say.innerHTML = (ok ? '✅ ' : '❌ ตอบ <b>' + it.a + '</b> — ') + it.why;
+        mark(ok);
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+
+/* ---------------- Part 2 / 3 — ✔ ✘ ---------------- */
+/* เก็บพิกัดไว้ เพื่อให้ตรวจสอบความถูกต้องด้วยโปรแกรมได้ */
+var P2 = [
+  { L: [[20,65,160,65],[90,15,90,115]], a: true,  why: 'เส้นนอนกับเส้นตั้ง <b>ตั้งฉากกันเสมอ</b>' },
+  { L: [[20,110,160,35],[20,40,160,100]], a: false, why: 'ตัดกันจริง แต่มุมที่ได้<b>ไม่ใช่มุมฉาก</b>' },
+  { L: [[20,100,160,100],[90,25,90,100]], a: true,  why: 'รูปตัว T — เส้นตั้งมาชนเส้นนอนเป็น<b>มุมฉาก</b>' },
+  { L: [[20,45,160,45],[20,95,160,95]], a: false, why: 'สองเส้นนี้<b>ขนาน</b>กัน ไม่มีวันตัดกัน จึงไม่ตั้งฉาก' },
+  { L: [[45,20,45,105],[45,105,150,105]], a: true,  why: 'มุมตัว L — เป็น<b>มุมฉาก</b>พอดี' },
+  { L: [[25,110,145,35],[30,25,140,110]], a: false, why: 'ตัดกันเป็นรูปกากบาทเอียง แต่<b>ไม่ใช่ 90°</b>' }
+];
+var P3 = [
+  { L: [[20,45,160,45],[20,95,160,95]], a: true,  why: 'เส้นนอน 2 เส้น ห่างเท่ากันตลอด = <b>ขนาน</b>' },
+  { L: [[25,25,155,105],[25,105,155,25]], a: false, why: 'ตัดกันตรงกลางแล้ว = <b>ไม่ขนาน</b>' },
+  { L: [[25,30,90,110],[85,20,150,100]], a: true,  why: 'เอียงเท่ากันทั้งคู่ ยืดไปไกลแค่ไหนก็ไม่เจอกัน' },
+  { L: [[20,45,150,70],[20,110,150,60]], a: false, why: 'ช่องว่างแคบลงเรื่อย ๆ ถ้ายืดต่อ<b>เจอกันแน่</b>' },
+  { L: [[65,20,65,110],[115,20,115,110]], a: true,  why: 'เส้นตั้ง 2 เส้น ก็<b>ขนาน</b>กันได้' },
+  { L: [[30,105,140,35],[30,45,140,110]], a: false, why: 'เอียงคนละทาง = ไม่ขนาน' }
+];
+
+function yn(rootId, DATA) {
+  var root = document.getElementById(rootId);
+  DATA.forEach(function (it, i) {
+    var parts = it.L.map(function (c, k) {
+      return seg({ x1: c[0], y1: c[1], x2: c[2], y2: c[3], c: k ? '#c62828' : '#1565c0' });
+    });
+    var d = document.createElement('div'); d.className = 'fig';
+    d.innerHTML = '<span class="num">' + (i + 1) + '</span>' + svg(parts) +
+      '<div class="yn"><button data-v="1">✔</button><button data-v="0">✘</button></div>' +
+      '<div class="say"></div>';
+    var say = d.querySelector('.say');
+    d.querySelectorAll('.yn button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var pick = b.dataset.v === '1', ok = pick === it.a;
+        d.querySelectorAll('.yn button').forEach(function (x) { x.disabled = true; });
+        b.classList.add('picked', ok ? 'ok' : 'no');
+        d.classList.add(ok ? 'right' : 'miss');
+        say.innerHTML = (ok ? '✅ ' : '❌ คำตอบคือ ' + (it.a ? '✔ ใช่' : '✘ ไม่ใช่') + ' — ') + it.why;
+        mark(ok);
+      });
+    });
+    root.appendChild(d);
+  });
+}
+yn('p2', P2);
+yn('p3', P3);
+
+/* ---------------- Part 4 — เลือกรูปที่ตั้งฉาก ---------------- */
+var MINI = {
+  perp:  [seg({x1:15,y1:45,x2:105,y2:45}), seg({x1:60,y1:10,x2:60,y2:80}),
+          '<rect x="60" y="31" width="14" height="14" fill="none" stroke="#2e7d32" stroke-width="3"/>'],
+  slant: [seg({x1:15,y1:75,x2:105,y2:15}), seg({x1:15,y1:20,x2:105,y2:70})],
+  para:  [seg({x1:15,y1:30,x2:105,y2:30}), seg({x1:15,y1:60,x2:105,y2:60})],
+  paraS: [seg({x1:15,y1:20,x2:70,y2:78}), seg({x1:50,y1:14,x2:105,y2:72})],
+  perpS: [seg({x1:20,y1:20,x2:80,y2:80}), seg({x1:100,y1:20,x2:40,y2:80}),
+          '<rect x="53" y="45" width="14" height="14" fill="none" stroke="#2e7d32" stroke-width="3" transform="rotate(45 60 52)"/>'],
+  cross: [seg({x1:15,y1:45,x2:105,y2:45}), seg({x1:45,y1:10,x2:75,y2:80})]
+};
+function mini(k) { return '<svg viewBox="0 0 120 90" width="120" height="90">' + MINI[k].join('') + '</svg>'; }
+
+var P4 = [
+  { o: ['para', 'perp', 'slant', 'paraS'], a: 1, why: 'รูปที่ 2 มี<b>มุมฉาก</b> 🟩 ตรงจุดตัด — อีก 3 รูปไม่มี' },
+  { o: ['slant', 'cross', 'perp', 'para'], a: 2, why: 'รูปที่ 3 เส้นนอน + เส้นตั้ง = ตั้งฉากแน่นอน' },
+  { o: ['perpS', 'paraS', 'para', 'slant'], a: 0, why: 'รูปที่ 1 ถึงจะเอียง แต่ตัดกันเป็น<b>มุมฉาก</b> ก็ยังเรียกว่าตั้งฉาก' },
+  { o: ['cross', 'para', 'paraS', 'perp'], a: 3, why: 'รูปที่ 4 มีมุมฉาก ส่วนรูปที่ 1 ตัดกันก็จริงแต่มุมไม่ฉาก' }
+];
+(function () {
+  var root = document.getElementById('p4');
+  P4.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'q';
+    var h = '<div class="qtext"><span class="qnum">' + (i + 1) +
+      '</span>Which figure has perpendicular lines?</div>' +
+      '<div class="figs" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">';
+    it.o.forEach(function (k, j) {
+      h += '<div class="fig" data-j="' + j + '" style="cursor:pointer">' + mini(k) +
+        '<div class="cap" style="font-size:16px">' + (j + 1) + '</div></div>';
+    });
+    h += '</div><div class="fb"></div>';
+    d.innerHTML = h;
+    var fb = d.querySelector('.fb');
+    d.querySelectorAll('.fig').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (fb.classList.contains('show')) return;
+        var j = +b.dataset.j, ok = j === it.a;
+        d.querySelectorAll('.fig').forEach(function (x) {
+          x.style.cursor = 'default';
+          if (+x.dataset.j === it.a) x.classList.add('right');
+        });
+        if (!ok) b.classList.add('miss');
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = (ok ? '✅ ถูกต้อง! ' : '❌ คำตอบคือรูปที่ <b>' + (it.a + 1) + '</b> — ') + it.why;
+        mark(ok);
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+
+/* ---------------- Part 5 — ⊥ หรือ ∥ ---------------- */
+var P5 = [
+  { t: 'AB ___ DC', a: '∥', why: 'AB คือด้านบน DC คือด้านล่าง — สองด้านนี้<b>ขนาน</b>กัน' },
+  { t: 'AB ___ AD', a: '⊥', why: 'ด้านบนกับด้านซ้ายมาเจอกันที่มุม A เป็น<b>มุมฉาก</b>' },
+  { t: 'AD ___ BC', a: '∥', why: 'ด้านซ้ายกับด้านขวา — <b>ขนาน</b>กัน ไม่มีวันเจอกัน' },
+  { t: 'DC ___ BC', a: '⊥', why: 'ด้านล่างกับด้านขวามาเจอกันที่มุม C เป็น<b>มุมฉาก</b>' }
+];
+(function () {
+  var root = document.getElementById('p5');
+  P5.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = '<div class="qtext"><span class="qnum">' + (i + 1) + '</span>' +
+      'Line ' + it.t.replace('___', '<b style="color:#c62828">___</b>') + '</div>' +
+      '<div class="picker" style="justify-content:flex-start">' +
+      '<button data-t="⊥" style="font-size:24px">⊥</button>' +
+      '<button data-t="∥" style="font-size:24px">∥</button></div><div class="fb"></div>';
+    var fb = d.querySelector('.fb');
+    d.querySelectorAll('.picker button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ok = b.dataset.t === it.a;
+        d.querySelectorAll('.picker button').forEach(function (x) {
+          x.disabled = true;
+          if (x.dataset.t === it.a) x.classList.add('ok');
+        });
+        if (!ok) b.classList.add('no');
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = (ok ? '✅ ' : '❌ คำตอบคือ <b>' + it.a + '</b> — ') + it.why;
+        mark(ok);
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+
+/* ---------------- Part 6 — แนวของเส้น ---------------- */
+var P6 = [
+  { L: [20, 65, 160, 65], a: 'Horizontal', why: 'นอนราบ ซ้าย–ขวา = <b>horizontal</b>' },
+  { L: [90, 15, 90, 115], a: 'Vertical',   why: 'ตั้งขึ้น บน–ล่าง = <b>vertical</b>' },
+  { L: [25, 110, 155, 25], a: 'Slanted',   why: 'เอียง ไม่ใช่ทั้งนอนและตั้ง = <b>slanted</b>' },
+  { L: [40, 20, 40, 110],  a: 'Vertical',  why: 'อยู่ริมซ้ายก็ยัง<b>ตั้ง</b>อยู่ดี' },
+  { L: [20, 30, 160, 30],  a: 'Horizontal', why: 'อยู่สูงหน่อยแต่ก็ยัง<b>นอน</b>' },
+  { L: [25, 25, 155, 105], a: 'Slanted',   why: 'ลากลงเฉียง = <b>slanted</b>' }
+];
+(function () {
+  var root = document.getElementById('p6');
+  P6.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'fig';
+    var h = '<span class="num">' + (i + 1) + '</span>' +
+      svg([seg({ x1: it.L[0], y1: it.L[1], x2: it.L[2], y2: it.L[3] })]) + '<div class="picker">';
+    ['Horizontal', 'Vertical', 'Slanted'].forEach(function (t) {
+      h += '<button data-t="' + t + '">' + t + '</button>';
+    });
+    h += '</div><div class="say"></div>';
+    d.innerHTML = h;
+    var say = d.querySelector('.say');
+    d.querySelectorAll('.picker button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ok = b.dataset.t === it.a;
+        d.querySelectorAll('.picker button').forEach(function (x) {
+          x.disabled = true;
+          if (x.dataset.t === it.a) x.classList.add('ok');
+        });
+        if (!ok) b.classList.add('no');
+        d.classList.add(ok ? 'right' : 'miss');
+        say.innerHTML = (ok ? '✅ ' : '❌ ตอบ <b>' + it.a + '</b> — ') + it.why;
+        mark(ok);
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+
+/* ---------------- Part 7 — นับเส้นในบ้าน ---------------- */
+var P7 = [
+  { q: 'How many <b>vertical</b> lines? <span class="th">มีเส้นแนวตั้งกี่เส้น</span>', a: 6,
+    why: 'ผนังซ้าย + ผนังขวา + ขอบประตู 2 + ขอบหน้าต่าง 2 = <b>6 เส้น</b>' },
+  { q: 'How many <b>horizontal</b> lines? <span class="th">มีเส้นแนวนอนกี่เส้น</span>', a: 5,
+    why: 'เพดาน + พื้น + ขอบบนประตู + ขอบบนหน้าต่าง + ขอบล่างหน้าต่าง = <b>5 เส้น</b> (หลังคาเอียง 2 เส้นไม่นับ)' }
+];
+(function () {
+  var root = document.getElementById('p7');
+  P7.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = '<div class="qtext"><span class="qnum">' + (i + 1) + '</span>' + it.q + '</div>' +
+      '<div class="countbox"><input type="number" min="0" inputmode="numeric">' +
+      '<button class="btn">ตรวจ</button></div><div class="fb"></div>';
+    var inp = d.querySelector('input'), fb = d.querySelector('.fb');
+    d.querySelector('.btn').addEventListener('click', function () {
+      if (fb.classList.contains('show')) return;
+      if (inp.value === '') { alert('พิมพ์จำนวนก่อนนะ'); return; }
+      var ok = +inp.value === it.a;
+      inp.disabled = true; inp.classList.add(ok ? 'right' : 'miss');
+      fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+      fb.innerHTML = (ok ? '✅ ' : '❌ คำตอบคือ <b>' + it.a + '</b> — ') + it.why;
+      mark(ok);
+    });
+    root.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

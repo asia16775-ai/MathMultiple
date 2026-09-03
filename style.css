@@ -464,3 +464,97 @@ body.math .menu a b { color: #01579b; }
 .grid-table th, .grid-table td { text-align: center; padding: 7px 4px; }
 .grid-table thead th, .grid-table tbody th { background: #b3e5fc; color: #01579b; }
 .grid-table td.hl { background: #fff9c4; font-weight: 700; }
+
+/* ================= UNIT 6 — Lines & Unit 7 — Time ================= */
+
+/* ---- geometry figure cards ---- */
+.figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 14px; }
+.fig {
+  background: #fff; border: 2px solid #e0e0e0; border-radius: 16px;
+  padding: 12px; text-align: center;
+}
+.fig svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.fig .cap { font-family: 'Mali', sans-serif; font-size: 18px; color: #01579b; margin-top: 6px; }
+.fig .cap small { display: block; font-family: 'Sarabun', sans-serif; font-size: 15px; color: #78909c; font-weight: 400; }
+.fig .num {
+  display: inline-block; background: #26a69a; color: #fff; font-weight: 700;
+  border-radius: 999px; width: 30px; height: 30px; line-height: 30px; margin-bottom: 6px;
+}
+.fig.right { border-color: #2e7d32; background: #e8f5e9; }
+.fig.miss  { border-color: #d32f2f; background: #ffebee; }
+.fig .yn { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+.fig .yn button {
+  font-family: inherit; font-size: 22px; line-height: 1; cursor: pointer;
+  border: 2px solid #cfd8dc; background: #fff; border-radius: 12px; padding: 8px 16px;
+}
+.fig .yn button:hover:not(:disabled) { background: #e1f5fe; border-color: #0277bd; }
+.fig .yn button:disabled { cursor: default; opacity: .45; }
+.fig .yn button.picked { opacity: 1; border-width: 3px; }
+.fig .yn button.picked.ok { background: #c8e6c9; border-color: #2e7d32; }
+.fig .yn button.picked.no { background: #ffcdd2; border-color: #d32f2f; }
+.fig .say { font-size: 15px; color: #37474f; margin-top: 7px; min-height: 20px; }
+
+/* ---- clocks ---- */
+.clocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-top: 14px; }
+.clockbox { background: #fff; border: 2px solid #e0e0e0; border-radius: 18px; padding: 14px; text-align: center; }
+.clockbox.right { border-color: #2e7d32; background: #e8f5e9; }
+.clockbox.miss  { border-color: #d32f2f; background: #ffebee; }
+.clockbox svg { display: block; margin: 0 auto; }
+.clockbox .digi {
+  font-family: 'Mali', sans-serif; font-size: 30px; color: #01579b;
+  background: #e1f5fe; border-radius: 12px; padding: 4px 0; margin-top: 8px; letter-spacing: 2px;
+}
+.clockbox .words { font-size: 17px; color: #37474f; margin-top: 6px; }
+.clockbox input {
+  font-family: inherit; font-size: 22px; font-weight: 700; text-align: center;
+  width: 130px; padding: 8px; border: 2px solid #dfe6ea; border-radius: 10px; margin-top: 10px;
+}
+.clockbox input.right { background: #c8e6c9; border-color: #2e7d32; }
+.clockbox input.miss  { background: #ffcdd2; border-color: #d32f2f; }
+.clockbox .key { font-size: 16px; color: #c62828; font-weight: 700; display: none; margin-top: 6px; }
+.clockbox .key.show { display: block; }
+
+/* ---- time line (duration) ---- */
+.tline {
+  display: flex; align-items: center; gap: 0; flex-wrap: wrap;
+  background: #fff8e1; border: 2px solid #ffe082; border-radius: 14px;
+  padding: 16px 14px; margin: 14px 0;
+}
+.tline .pt { text-align: center; min-width: 108px; }
+.tline .pt b { display: block; font-family: 'Mali', sans-serif; font-size: 23px; color: #01579b; }
+.tline .pt span { font-size: 14px; color: #78909c; }
+.tline .seg { flex: 1; min-width: 90px; text-align: center; position: relative; }
+.tline .seg .lab {
+  background: #26a69a; color: #fff; border-radius: 999px; padding: 3px 14px;
+  font-size: 16px; font-weight: 700; display: inline-block;
+}
+.tline .seg .rail { height: 5px; background: #26a69a; border-radius: 3px; margin-top: 6px; }
+
+/* ---- vertical sum for time add/subtract ---- */
+.tsum { display: inline-block; background: #fff; border: 2px solid #b0bec5; border-radius: 12px; padding: 12px 18px; margin: 8px 12px 8px 0; }
+.tsum table { margin: 0; width: auto; font-size: 21px; }
+.tsum td { border: 0; padding: 2px 6px; text-align: right; font-weight: 700; color: #263238; }
+.tsum td.op { color: #c62828; }
+.tsum tr.line td { border-top: 3px solid #37474f; }
+.tsum td.u { font-size: 15px; color: #78909c; font-weight: 400; }
+
+/* ---- ampm cards ---- */
+.ampm { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 14px; }
+.ampm .c { border-radius: 16px; padding: 14px; border: 2px solid; text-align: center; }
+.ampm .c.am { background: #fffde7; border-color: #ffe082; }
+.ampm .c.pm { background: #e8eaf6; border-color: #9fa8da; }
+.ampm .c .emo { font-size: 34px; }
+.ampm .c b { display: block; font-family: 'Mali', sans-serif; font-size: 21px; margin: 4px 0; color: #01579b; }
+.ampm .c .t24 { font-size: 17px; color: #546e7a; }
+
+/* ---- reveal card ---- */
+.dcard {
+  background: #fff; border: 2px dashed #90a4ae; border-radius: 14px;
+  padding: 14px; text-align: center; cursor: pointer; user-select: none;
+}
+.dcard:hover { border-color: #0277bd; background: #e1f5fe; }
+.dcard .front { font-family: 'Mali', sans-serif; font-size: 20px; color: #01579b; }
+.dcard .back { display: none; margin-top: 8px; font-size: 19px; font-weight: 700; color: #2e7d32; }
+.dcard.open { border-style: solid; border-color: #2e7d32; background: #e8f5e9; }
+.dcard.open .back { display: block; }
+.dcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 12px; }

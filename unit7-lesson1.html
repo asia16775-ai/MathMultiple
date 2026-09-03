@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 7 Lesson 1 — Telling Time to the Minute</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .handrow { display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:center; }
+  .handkey { display:flex; gap:10px; align-items:center; }
+  .handkey i { display:inline-block; border-radius:5px; flex:none; }
+  .handkey .ht { font-family:'Mali',sans-serif; font-size:20px; }
+  .hk-h { width:34px; height:9px; background:#c62828; }
+  .hk-m { width:56px; height:6px; background:#1565c0; }
+  .hcard { border-radius:14px; padding:12px 16px; border:2px solid; margin-bottom:12px; }
+  .hcard p { margin:6px 0 0; font-size:18px; }
+  .hcard p strong { color:inherit; }
+  .hcard-h { background:#ffebee; border-color:#ef9a9a; color:#c62828; }
+  .hcard-m { background:#e3f2fd; border-color:#90caf9; color:#1565c0; }
+  .qc { background:#fff; border:2px solid #e0e0e0; border-radius:16px; padding:16px 18px; margin-bottom:14px; }
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Mathematics • Primary 3 • Unit 7 Time</span>
+  <h1>🕐 Telling Time to the Minute</h1>
+  <p>Lesson 1 • <span class="th">อ่านเวลาให้ละเอียดถึงนาที + คำว่า past / after / to / before</span></p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="unit7-lesson2.html">➡️ Lesson 2 Conversion</a>
+    <a href="unit7-practice.html">✏️ Practice</a>
+  </nav>
+
+  <div class="card">
+    <h2>🎯 Lesson Objectives</h2>
+    <ol>
+      <li>Tell time <b>to the minute</b>. <span class="th">อ่านเวลาได้ละเอียดถึงนาที</span></li>
+      <li>Use <b>past</b>, <b>after</b>, <b>to</b> and <b>before</b> to tell time.
+        <span class="th">ใช้คำว่า past / after / to / before บอกเวลาได้</span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>📖 Vocabulary — คำศัพท์</h2>
+    <table>
+      <thead><tr><th>English</th><th>ภาษาไทย</th></tr></thead>
+      <tbody>
+        <tr><td><b>Time</b></td><td>เวลา</td></tr>
+        <tr><td><b>Hour</b></td><td>ชั่วโมง</td></tr>
+        <tr><td><b>Minute</b></td><td>นาที</td></tr>
+        <tr><td><b>O’clock</b></td><td>นาฬิกาตรง (นาทีเป็น 00)</td></tr>
+        <tr><td><b>Half hour / half past</b></td><td>ครึ่งชั่วโมง / ครึ่ง (30 นาที)</td></tr>
+        <tr><td><b>Quarter past / after</b></td><td>15 นาทีหลังจาก</td></tr>
+        <tr><td><b>Quarter to / before</b></td><td>อีก 15 นาทีจะถึง</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1. Analog vs digital -->
+  <div class="card">
+    <h2>1️⃣ นาฬิกา 2 แบบ</h2>
+    <div class="two">
+      <div class="clockbox">
+        <div id="c-demo"></div>
+        <div class="cap" style="font-family:'Mali',sans-serif;font-size:19px;color:#01579b;margin-top:6px">Analog Clock</div>
+        <p style="font-size:16px;margin:4px 0 0">มีเข็ม บอกเวลาบนหน้าปัดที่มีตัวเลข</p>
+      </div>
+      <div class="clockbox">
+        <div class="digi" style="font-size:44px;margin-top:52px">7:20</div>
+        <div class="cap" style="font-family:'Mali',sans-serif;font-size:19px;color:#01579b;margin-top:26px">Digital Clock</div>
+        <p style="font-size:16px;margin:4px 0 0">บอกเป็นตัวเลข ชั่วโมง <b>:</b> นาที</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Parts of a clock -->
+  <div class="card">
+    <h2>2️⃣ Parts of a Clock — ส่วนต่าง ๆ ของนาฬิกา</h2>
+    <div class="handrow">
+      <div id="c-parts"></div>
+      <div style="min-width:260px;flex:1">
+        <div class="hcard hcard-h">
+          <div class="handkey"><i class="hk-h"></i> <span class="ht">Hour hand</span></div>
+          <p>เข็ม <strong>สั้น</strong> = บอก <strong>ชั่วโมง</strong></p>
+        </div>
+        <div class="hcard hcard-m">
+          <div class="handkey"><i class="hk-m"></i> <span class="ht">Minute hand</span></div>
+          <p>เข็ม <strong>ยาว</strong> = บอก <strong>นาที</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div><b>12</b><span>numbers on a clock<br>ตัวเลขบนหน้าปัด</span></div>
+      <div><b>60</b><span>minutes in an hour<br>1 ชั่วโมง = 60 นาที</span></div>
+      <div><b>5</b><span>minutes per number<br>ตัวเลข 1 ช่อง = 5 นาที</span></div>
+    </div>
+
+    <div class="tip">
+      <b>ขีดเล็ก ๆ 1 ขีด = 1 นาที</b> · <b>ตัวเลข 1 ตัว = 5 นาที</b> —
+      ถ้าเข็มยาวชี้เลข 4 ก็คือ 4 × 5 = <b>20 นาที</b>
+    </div>
+  </div>
+
+  <!-- 3. Counting minutes -->
+  <div class="card">
+    <h2>3️⃣ นับนาทีรอบหน้าปัด — Count by Fives</h2>
+    <p>เอาเลขที่เข็มยาวชี้ <b>× 5</b> ก็จะได้จำนวนนาที</p>
+    <div class="grid-table">
+      <table>
+        <thead><tr><th>เข็มยาวชี้เลข</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+          <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead>
+        <tbody><tr><th>= กี่นาที</th><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td>
+          <td class="hl">30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60 / 00</td></tr></tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>จุดสำคัญ 3 จุด:</b> เลข <b>12</b> = o’clock (นาฬิกาตรง) ·
+      เลข <b>3</b> = quarter past (15 นาที) · เลข <b>6</b> = half past (ครึ่ง 30 นาที)
+    </div>
+  </div>
+
+  <!-- 4. o'clock and half past -->
+  <div class="card">
+    <h2>4️⃣ O’clock &amp; Half past</h2>
+    <p><b>O’clock</b> — เข็มยาวชี้ที่เลข 12 พอดี <span class="th">อ่านว่า “… โมงตรง”</span></p>
+    <div class="clocks" id="row-oclock"></div>
+
+    <p style="margin-top:20px"><b>Half past</b> — เข็มยาวชี้ที่เลข 6 (ผ่านมาแล้วครึ่งชั่วโมง = 30 นาที)</p>
+    <div class="clocks" id="row-half"></div>
+
+    <div class="tip">
+      <b>ระวัง!</b> ตอน <b>half past</b> เข็มสั้นจะอยู่<b>ตรงกลาง</b>ระหว่างเลข 2 ตัว
+      ให้อ่าน<b>เลขที่น้อยกว่า</b> เช่น เข็มสั้นอยู่ระหว่าง 3 กับ 4 = <b>half past 3</b> ไม่ใช่ 4
+    </div>
+  </div>
+
+  <!-- 5. To the minute -->
+  <div class="card">
+    <h2>5️⃣ Telling Time to the Minute — อ่านให้ละเอียดถึงนาที</h2>
+    <div class="box yellow">
+      <b>ขั้นตอน 2 ขั้น</b>
+      <p><b>1.</b> ดูเข็ม<b>สั้น</b>ก่อน → ได้ชั่วโมง (เข็มสั้นผ่านเลขไหนมา ให้อ่านเลขนั้น)<br>
+         <b>2.</b> ดูเข็ม<b>ยาว</b> → นับขีดหรือเอาเลข × 5 → ได้นาที</p>
+    </div>
+    <div class="clocks" id="row-minute"></div>
+
+    <div class="note">
+      <b>วิธีอ่านออกเสียง:</b> ถ้านาทีน้อยกว่า 10 ให้ใส่คำว่า <b>o’</b> เช่น
+      3:05 อ่านว่า <b>three o’five</b> · 12:03 อ่านว่า <b>twelve o’three</b><br>
+      ถ้านาทีตั้งแต่ 10 ขึ้นไป อ่านตัวเลขไปตรง ๆ เช่น 5:38 = <b>five thirty-eight</b>
+    </div>
+  </div>
+
+  <!-- 6. past / to -->
+  <div class="card">
+    <h2>6️⃣ past · after · to · before</h2>
+    <p>เวลาเดียวกันพูดได้ <b>2 แบบ</b> — นับจาก<b>ชั่วโมงที่ผ่านมาแล้ว</b> หรือนับว่า<b>อีกเท่าไรจะถึง</b>ชั่วโมงหน้า</p>
+
+    <div class="two">
+      <div class="box blue">
+        <b>past / after — ผ่านมาแล้ว</b>
+        <p>นับจากเลขชั่วโมงที่<b>ผ่านไปแล้ว</b><br>
+          <span class="th">เดินไปข้างหน้าตามเข็ม</span></p>
+      </div>
+      <div class="box yellow">
+        <b>to / before — อีกเท่าไรจะถึง</b>
+        <p><b>60 − นาที</b> = อีกกี่นาทีจะถึงชั่วโมง<b>ถัดไป</b><br>
+          <span class="th">นับถอยหลังไปหาเลข 12</span></p>
+      </div>
+    </div>
+
+    <div class="clocks" id="row-past"></div>
+
+    <div class="tip">
+      <b>สูตรลัด:</b> ถ้าเข็มยาวอยู่<b>ฝั่งขวา</b>ของหน้าปัด (นาที 1–30) มักพูดแบบ <b>past</b> ·
+      ถ้าอยู่<b>ฝั่งซ้าย</b> (นาที 31–59) มักพูดแบบ <b>to</b>
+    </div>
+
+    <div class="note">
+      <b>ข้อควรระวังที่ผิดกันบ่อยที่สุด:</b> เวลาใช้ <b>to</b> ต้องเปลี่ยนเป็น<b>ชั่วโมงถัดไป</b>ด้วย!<br>
+      9:45 → <b>quarter to 10</b> (ไม่ใช่ to 9) เพราะกำลังจะถึง 10 โมงแล้ว
+    </div>
+  </div>
+
+  <!-- Quick check -->
+  <div class="card">
+    <h2>✅ Quick Check</h2>
+    <div id="qc"></div>
+    <p class="foot" style="margin-top:14px">
+      ต่อไป → <a href="unit7-lesson2.html"><b>Lesson 2: Conversion of Time</b></a> ·
+      หรือ <a href="unit7-practice.html"><b>ไปฝึกอ่านนาฬิกาเลย</b></a>
+    </p>
+  </div>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script src="clock.js"></script>
+<script>
+Clock.draw('c-demo', 7, 20, { size: 180 });
+Clock.draw('c-parts', 4, 10, { size: 210 });
+
+/* แถวนาฬิกาพร้อมคำอ่าน */
+function row(id, list, mode) {
+  var root = document.getElementById(id);
+  list.forEach(function (t, i) {
+    var d = document.createElement('div'); d.className = 'clockbox';
+    var cid = id + '-' + i;
+    var words;
+    if (mode === 'past') {
+      /* นาทีเกิน 30 คนอังกฤษนิยมพูดแบบ "to" ก่อน จึงสลับให้แบบที่ใช้จริงขึ้นก่อน */
+      var a = Clock.readPast(t[0], t[1]), b = Clock.readTo(t[0], t[1]);
+      if (t[1] > 30) { var tmp = a; a = b; b = tmp; }
+      words = '<b>' + a + '</b><br><span class="th">หรือ</span> <b>' + b + '</b>';
+    } else {
+      words = Clock.readPast(t[0], t[1]);
+      if (mode === 'minute') words = '<b>' + Clock.readNumber(t[0], t[1]) + '</b>';
+    }
+    d.innerHTML = '<div id="' + cid + '"></div><div class="digi">' +
+      Clock.digital(t[0], t[1]) + '</div><div class="words">' + words + '</div>';
+    root.appendChild(d);
+    Clock.draw(cid, t[0], t[1], { size: 160 });
+  });
+}
+
+row('row-oclock', [[1, 0], [3, 0], [6, 0], [9, 0]]);
+row('row-half',   [[3, 30], [5, 30], [8, 30], [12, 30]]);
+row('row-minute', [[12, 3], [3, 5], [5, 38], [7, 17]], 'minute');
+row('row-past',   [[9, 15], [7, 45], [9, 35], [12, 25]], 'past');
+
+/* Quick check */
+var QC = [
+  { q: 'The <b>short</b> hand tells us the ______.', th: 'เข็มสั้นบอกอะไร',
+    o: ['minutes', 'hour', 'seconds'], a: 1,
+    why: 'เข็ม<b>สั้น</b> = ชั่วโมง · เข็ม<b>ยาว</b> = นาที (ยาวกว่า เพราะต้องวิ่งไกลกว่า)' },
+  { q: 'How many minutes are there in one hour?', th: '1 ชั่วโมงมีกี่นาที',
+    o: ['12', '30', '60'], a: 2, why: '1 hour = <b>60 minutes</b> เสมอ' },
+  { q: 'The minute hand points to <b>4</b>. How many minutes?', th: 'เข็มยาวชี้เลข 4 คือกี่นาที',
+    o: ['4 minutes', '20 minutes', '40 minutes'], a: 1,
+    why: 'เลข × 5 → 4 × 5 = <b>20 minutes</b>' },
+  { q: '9:45 — another way to say it is…', th: '9:45 พูดอีกแบบว่า',
+    o: ['quarter to 9', 'quarter past 9', 'quarter to 10'], a: 2,
+    why: '60 − 45 = 15 นาที และต้องเปลี่ยนเป็น<b>ชั่วโมงถัดไป</b> → <b>quarter to 10</b>' },
+  { q: 'How do we read <b>3:06</b>?', th: '3:06 อ่านว่าอะไร',
+    o: ['three six', 'three o’six', 'six o’three'], a: 1,
+    why: 'นาทีน้อยกว่า 10 ให้ใส่ <b>o’</b> ข้างหน้า → <b>three o’six</b>' },
+  { q: '12:25 — how many minutes <b>to</b> 1?', th: '12:25 อีกกี่นาทีจะถึงบ่ายโมง',
+    o: ['25 minutes', '35 minutes', '45 minutes'], a: 1,
+    why: '60 − 25 = <b>35 minutes to 1</b>' }
+];
+(function () {
+  var root = document.getElementById('qc');
+  QC.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'qc';
+    var h = '<div style="font-weight:600;font-size:19px;margin-bottom:10px"><span class="qnum" style="background:#26a69a;color:#fff;border-radius:50%;display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;margin-right:8px">' +
+      (i + 1) + '</span>' + it.q + '<br><span class="th">' + it.th + '</span></div><div class="opts">';
+    it.o.forEach(function (t, j) { h += '<button class="opt" data-j="' + j + '">' + t + '</button>'; });
+    h += '</div><div class="fb"></div>';
+    d.innerHTML = h;
+    var fb = d.querySelector('.fb');
+    d.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var j = +b.dataset.j, ok = j === it.a;
+        d.querySelectorAll('.opt').forEach(function (x) {
+          x.disabled = true;
+          if (+x.dataset.j === it.a) x.classList.add('correct');
+        });
+        if (!ok) b.classList.add('wrong');
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = (ok ? '✅ ถูกต้อง! ' : '❌ คำตอบคือ <b>' + it.o[it.a] + '</b> — ') + it.why;
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

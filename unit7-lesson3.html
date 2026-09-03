@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 7 Lesson 3 — Duration of Time</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .work { background:#fff; border:2px solid #e0e0e0; border-left:8px solid #26a69a;
+          border-radius:14px; padding:16px 18px; margin-bottom:16px; }
+  .work .story { font-size:19px; line-height:1.9; }
+  .work .story b { color:#00695c; }
+  .hop { display:flex; align-items:center; gap:0; flex-wrap:wrap; margin:12px 0; }
+  .hop .stop {
+    background:#e1f5fe; border:2px solid #81d4fa; border-radius:12px;
+    padding:8px 14px; font-family:'Mali',sans-serif; font-size:21px; color:#01579b;
+  }
+  .hop .jump { flex:1; min-width:80px; text-align:center; }
+  .hop .jump .lab { background:#ffca28; border-radius:999px; padding:3px 12px; font-weight:700; font-size:16px; }
+  .hop .jump .rail { height:4px; background:#ffca28; border-radius:3px; margin-top:5px; }
+  .qc { background:#fff; border:2px solid #e0e0e0; border-radius:16px; padding:16px 18px; margin-bottom:14px; }
+</style>
+</head>
+<body class="math">
+
+<header class="site-head">
+  <span class="unit">Mathematics • Primary 3 • Unit 7 Time</span>
+  <h1>⏳ Duration of Time</h1>
+  <p>Lesson 3 • A.M. / P.M. • <span class="th">หาช่วงเวลา เวลาเริ่ม และเวลาสิ้นสุด</span></p>
+</header>
+
+<div class="wrap">
+  <nav class="crumb">
+    <a href="index.html">🏠 Math Home</a>
+    <a href="unit7-lesson2.html">⬅️ Lesson 2</a>
+    <a href="unit7-lesson4.html">➡️ Lesson 4 Word Problems</a>
+    <a href="unit7-practice.html">✏️ Practice</a>
+  </nav>
+
+  <div class="card">
+    <h2>🎯 Lesson Objectives</h2>
+    <ol>
+      <li>Know when to say <b>A.M.</b> and <b>P.M.</b> <span class="th">รู้ว่าเมื่อไรใช้ A.M. เมื่อไรใช้ P.M.</span></li>
+      <li>Measure time in hours and minutes — <b>duration</b>. <span class="th">วัดช่วงเวลาเป็นชั่วโมงและนาที</span></li>
+      <li>Find the <b>starting time</b> and the <b>finishing time</b>. <span class="th">หาเวลาเริ่มต้นและเวลาสิ้นสุด</span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>📖 Vocabulary — คำศัพท์</h2>
+    <table>
+      <thead><tr><th>English</th><th>ภาษาไทย</th></tr></thead>
+      <tbody>
+        <tr><td><b>Duration / How long</b></td><td>ช่วงเวลา / นานเท่าไร</td></tr>
+        <tr><td><b>Starts at</b></td><td>เริ่มที่</td></tr>
+        <tr><td><b>Ends at</b></td><td>จบที่</td></tr>
+        <tr><td><b>Spend time</b></td><td>ใช้เวลา</td></tr>
+        <tr><td><b>Begin</b></td><td>เริ่มต้น</td></tr>
+        <tr><td><b>Finish</b></td><td>สิ้นสุด</td></tr>
+        <tr><td><b>Minutes later</b></td><td>นาทีต่อมา</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AM PM -->
+  <div class="card">
+    <h2>1️⃣ A.M. and P.M.</h2>
+    <p>
+      1 วันมี <b>24 ชั่วโมง</b> แต่หน้าปัดนาฬิกามีแค่ <b>12</b> ตัวเลข
+      เพราะฉะนั้นเข็มจึงต้องวน <b>2 รอบ</b> ต่อวัน — เราจึงต้องบอกด้วยว่ารอบไหน
+    </p>
+
+    <div class="two">
+      <div class="box yellow">
+        <div class="emo">🌅</div><b>A.M.</b>
+        <p>เที่ยงคืน ➝ ก่อนเที่ยงวัน<br><span class="th">00:00 – 11:59 (ตอนเช้า)</span></p>
+      </div>
+      <div class="box blue">
+        <div class="emo">🌙</div><b>P.M.</b>
+        <p>เที่ยงวัน ➝ ก่อนเที่ยงคืน<br><span class="th">12:00 – 23:59 (บ่าย เย็น กลางคืน)</span></p>
+      </div>
+    </div>
+
+    <h3>เทียบ 12-hour กับ 24-hour</h3>
+    <div class="ampm">
+      <div class="c am"><div class="emo">😴</div><b>12:00 A.M.</b>
+        <div class="t24">= 00:00<br><span class="th">เที่ยงคืน วันใหม่เริ่มต้น</span></div></div>
+      <div class="c am"><div class="emo">🌞</div><b>07:00 A.M.</b>
+        <div class="t24">= 07:00<br><span class="th">ตอนเช้าตัวเลขเท่ากันเลย</span></div></div>
+      <div class="c pm"><div class="emo">🍜</div><b>12:00 P.M.</b>
+        <div class="t24">= 12:00<br><span class="th">เที่ยงวัน กินข้าวเที่ยง</span></div></div>
+      <div class="c pm"><div class="emo">⚽</div><b>03:00 P.M.</b>
+        <div class="t24">= 15:00<br><span class="th">12 + 3 = 15</span></div></div>
+      <div class="c pm"><div class="emo">📺</div><b>08:00 P.M.</b>
+        <div class="t24">= 20:00<br><span class="th">12 + 8 = 20</span></div></div>
+    </div>
+
+    <div class="tip">
+      <b>สูตรง่าย ๆ:</b> เวลาแบบ P.M. ให้ <b>บวก 12</b> ก็จะได้เวลาแบบ 24 ชั่วโมง
+      (3 P.M. → 3 + 12 = 15:00) ยกเว้น 12 P.M. ที่เป็น 12:00 พอดี
+    </div>
+  </div>
+
+  <!-- Duration -->
+  <div class="card">
+    <h2>2️⃣ Duration — ช่วงเวลานานเท่าไร</h2>
+    <p>ความยาวของเวลาตั้งแต่ <b>เริ่ม</b> ถึง <b>จบ</b> เรียกว่า <b>Duration</b> <span class="th">(ช่วงเวลา)</span></p>
+
+    <div class="work">
+      <div class="story">☕ <b>Break time</b> — starts at <b>10:15 A.M.</b>, ends at <b>10:30 A.M.</b></div>
+      <div class="tline">
+        <div class="pt"><b>10:15</b><span>A.M. • Start</span></div>
+        <div class="seg"><span class="lab">15 minutes</span><div class="rail"></div></div>
+        <div class="pt"><b>10:30</b><span>A.M. • End</span></div>
+      </div>
+      <p style="margin:0"><b>ชั่วโมงเท่ากัน (10 ทั้งคู่)</b> → เอานาทีลบกันตรง ๆ: 30 − 15 = <b>15 minutes</b></p>
+    </div>
+
+    <div class="work">
+      <div class="story">📐 <b>Math class</b> — starts at <b>8:15 A.M.</b>, ends at <b>9:00 A.M.</b></div>
+      <div class="tline">
+        <div class="pt"><b>8:15</b><span>A.M. • Start</span></div>
+        <div class="seg"><span class="lab">45 minutes</span><div class="rail"></div></div>
+        <div class="pt"><b>9:00</b><span>A.M. • End</span></div>
+      </div>
+      <p style="margin:0">จบตอนนาฬิกาตรงพอดี → <b>60 − 15 = 45 minutes</b></p>
+    </div>
+
+    <div class="work">
+      <div class="story">⚽ <b>Play football</b> — starts at <b>4:05 P.M.</b>, ends at <b>4:45 P.M.</b></div>
+      <div class="tline">
+        <div class="pt"><b>4:05</b><span>P.M. • Start</span></div>
+        <div class="seg"><span class="lab">40 minutes</span><div class="rail"></div></div>
+        <div class="pt"><b>4:45</b><span>P.M. • End</span></div>
+      </div>
+      <p style="margin:0">ชั่วโมงเดียวกัน → <b>45 − 05 = 40 minutes</b></p>
+    </div>
+
+    <div class="work">
+      <div class="story">🍚 <b>Eat lunch</b> — starts at <b>11:30 A.M.</b>, ends at <b>12:30 P.M.</b></div>
+      <div class="tline">
+        <div class="pt"><b>11:30</b><span>A.M. • Start</span></div>
+        <div class="seg"><span class="lab">1 hour</span><div class="rail"></div></div>
+        <div class="pt"><b>12:30</b><span>P.M. • End</span></div>
+      </div>
+      <p style="margin:0"><b>นาทีเท่ากัน (30 ทั้งคู่)</b> → เอาชั่วโมงลบกัน: 12 − 11 = <b>1 hour</b></p>
+    </div>
+
+    <div class="work">
+      <div class="story">🎬 <b>Watch a movie</b> — starts at <b>5:00 P.M.</b>, ends at <b>7:30 P.M.</b></div>
+      <div class="hop">
+        <div class="stop">5:00 P.M.</div>
+        <div class="jump"><span class="lab">2 h later</span><div class="rail"></div></div>
+        <div class="stop">7:00 P.M.</div>
+        <div class="jump"><span class="lab">30 min later</span><div class="rail"></div></div>
+        <div class="stop">7:30 P.M.</div>
+      </div>
+      <p style="margin:0"><b>เดินทีละก้าว</b> — ชั่วโมงก่อน แล้วค่อยนาที → <b>2 h 30 min</b></p>
+    </div>
+
+    <div class="work">
+      <div class="story">😴 <b>Sleep</b> — starts at <b>8:00 P.M.</b>, ends at <b>4:45 A.M.</b></div>
+      <div class="hop">
+        <div class="stop">8:00 P.M.</div>
+        <div class="jump"><span class="lab">8 h later</span><div class="rail"></div></div>
+        <div class="stop">4:00 A.M.</div>
+        <div class="jump"><span class="lab">45 min later</span><div class="rail"></div></div>
+        <div class="stop">4:45 A.M.</div>
+      </div>
+      <p style="margin:0">ข้ามคืนก็ทำแบบเดียวกัน → <b>8 h 45 min</b></p>
+    </div>
+
+    <div class="tip">
+      <b>วิธีที่ปลอดภัยที่สุด — เดินทีละก้าว</b><br>
+      ก้าวที่ 1: เติม<b>ชั่วโมงเต็ม</b>ก่อนให้ใกล้เวลาจบที่สุด · ก้าวที่ 2: เติม<b>นาที</b>ที่เหลือ
+      แล้วเอาสองก้าวมารวมกัน
+    </div>
+  </div>
+
+  <!-- Start / finish -->
+  <div class="card">
+    <h2>3️⃣ Starting Time &amp; Finishing Time</h2>
+    <p>ถ้าโจทย์ให้ <b>เวลาเริ่ม + ใช้เวลานานเท่าไร</b> แล้วถามเวลาจบ — ให้<b>แวะที่นาฬิกาตรงก่อน</b></p>
+
+    <div class="work">
+      <div class="story">
+        🏊 Grade 3 students started swimming at <b>10:45 A.M.</b><br>
+        They swam for <b>40 minutes</b>. What time did they finish?
+      </div>
+      <div class="hop">
+        <div class="stop">10:45 a.m.</div>
+        <div class="jump"><span class="lab">15 min</span><div class="rail"></div></div>
+        <div class="stop">11:00 a.m.</div>
+        <div class="jump"><span class="lab">25 min</span><div class="rail"></div></div>
+        <div class="stop">11:25 a.m.</div>
+      </div>
+      <p style="margin:0">
+        จาก 10:45 ไป 11:00 ใช้ <b>15</b> นาที → เหลืออีก <b>40 − 15 = 25</b> นาที →
+        ตอบ <b style="color:#2e7d32">11:25 A.M.</b>
+      </p>
+    </div>
+
+    <div class="work">
+      <div class="story">
+        💃 Grade 1 students started dancing at <b>8:55 A.M.</b><br>
+        They danced for <b>30 minutes</b>. What time did they finish?
+      </div>
+      <div class="hop">
+        <div class="stop">8:55 a.m.</div>
+        <div class="jump"><span class="lab">5 min</span><div class="rail"></div></div>
+        <div class="stop">9:00 a.m.</div>
+        <div class="jump"><span class="lab">25 min</span><div class="rail"></div></div>
+        <div class="stop">9:25 a.m.</div>
+      </div>
+      <p style="margin:0">
+        จาก 8:55 ไป 9:00 ใช้ <b>5</b> นาที → เหลือ <b>30 − 5 = 25</b> นาที →
+        ตอบ <b style="color:#2e7d32">9:25 A.M.</b>
+      </p>
+    </div>
+
+    <div class="work">
+      <div class="story">
+        🧃 All students had break for <b>15 minutes</b>.<br>
+        They finished break at <b>2:25 P.M.</b> What time did they start?
+      </div>
+      <div class="hop">
+        <div class="stop">2:10 p.m.</div>
+        <div class="jump"><span class="lab">15 min</span><div class="rail"></div></div>
+        <div class="stop">2:25 p.m.</div>
+      </div>
+      <p style="margin:0">
+        โจทย์ถาม<b>เวลาเริ่ม</b> → ต้อง <b>ลบ</b> ย้อนกลับ: 25 − 15 = 10 →
+        ตอบ <b style="color:#2e7d32">2:10 P.M.</b>
+      </p>
+    </div>
+
+    <div class="note">
+      <b>ดูให้ดีว่าโจทย์ถามอะไร</b><br>
+      ถามเวลา<b>จบ</b> → <b>บวก</b> เดินไปข้างหน้า &nbsp;·&nbsp;
+      ถามเวลา<b>เริ่ม</b> → <b>ลบ</b> เดินถอยหลัง &nbsp;·&nbsp;
+      ถาม<b>นานเท่าไร</b> → นับระยะห่างระหว่างสองเวลา
+    </div>
+  </div>
+
+  <!-- Quick check -->
+  <div class="card">
+    <h2>✅ Quick Check</h2>
+    <div id="qc"></div>
+    <p class="foot" style="margin-top:14px">
+      ต่อไป → <a href="unit7-lesson4.html"><b>Lesson 4: Add &amp; Subtract Time</b></a>
+    </p>
+  </div>
+
+  <p class="foot">by: Miss Jay &amp; Miss Pim • สื่อการเรียนรู้เพื่อการศึกษา</p>
+</div>
+
+<script>
+var QC = [
+  { q: 'We eat lunch at 12:00 ______.', th: 'กินข้าวเที่ยงตอน 12:00 อะไร',
+    o: ['A.M.', 'P.M.'], a: 1, why: 'เที่ยงวันเป็นจุดเริ่มของ <b>P.M.</b> ส่วน 12:00 A.M. คือเที่ยงคืน' },
+  { q: '3:00 P.M. in 24-hour time is…', th: 'บ่าย 3 โมง เขียนแบบ 24 ชั่วโมงคือ',
+    o: ['03:00', '13:00', '15:00'], a: 2, why: 'P.M. ให้ <b>+12</b> → 3 + 12 = <b>15:00</b>' },
+  { q: 'A class starts at 8:15 and ends at 9:00. How long?', th: 'เรียน 8:15 ถึง 9:00 นานเท่าไร',
+    o: ['15 minutes', '45 minutes', '1 hour'], a: 1, why: '60 − 15 = <b>45 minutes</b>' },
+  { q: 'Break starts at 10:15 and ends at 10:30. How long?', th: 'พัก 10:15 ถึง 10:30 นานเท่าไร',
+    o: ['15 minutes', '30 minutes', '45 minutes'], a: 0, why: 'ชั่วโมงเท่ากัน → 30 − 15 = <b>15 minutes</b>' },
+  { q: 'Dance starts at 8:55 and lasts 30 minutes. It finishes at…', th: 'เต้นเริ่ม 8:55 นาน 30 นาที จบตอนไหน',
+    o: ['9:15', '9:25', '9:30'], a: 1,
+    why: 'ไป 9:00 ใช้ 5 นาที เหลือ 30 − 5 = 25 → <b>9:25</b>' },
+  { q: 'Break lasted 15 minutes and finished at 2:25 P.M. It started at…',
+    th: 'พัก 15 นาที จบ 2:25 เริ่มตอนไหน',
+    o: ['2:10 P.M.', '2:40 P.M.', '2:15 P.M.'], a: 0,
+    why: 'ถามเวลา<b>เริ่ม</b> ต้องลบย้อนกลับ: 25 − 15 = 10 → <b>2:10 P.M.</b>' }
+];
+(function () {
+  var root = document.getElementById('qc');
+  QC.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'qc';
+    var h = '<div style="font-weight:600;font-size:19px;margin-bottom:10px"><span class="qnum" style="background:#26a69a;color:#fff;border-radius:50%;display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;margin-right:8px">' +
+      (i + 1) + '</span>' + it.q + '<br><span class="th">' + it.th + '</span></div><div class="opts">';
+    it.o.forEach(function (t, j) { h += '<button class="opt" data-j="' + j + '">' + t + '</button>'; });
+    h += '</div><div class="fb"></div>';
+    d.innerHTML = h;
+    var fb = d.querySelector('.fb');
+    d.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var j = +b.dataset.j, ok = j === it.a;
+        d.querySelectorAll('.opt').forEach(function (x) {
+          x.disabled = true;
+          if (+x.dataset.j === it.a) x.classList.add('correct');
+        });
+        if (!ok) b.classList.add('wrong');
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = (ok ? '✅ ถูกต้อง! ' : '❌ คำตอบคือ <b>' + it.o[it.a] + '</b> — ') + it.why;
+      });
+    });
+    root.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

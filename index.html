@@ -3,42 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Math P.3 — Unit 5 Multiplication</title>
+<title>Math P.3 — Multiplication · Lines · Time</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .unitbar {
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    background:linear-gradient(135deg,#0277bd,#26a69a); color:#fff;
+    border-radius:16px; padding:12px 18px; margin:26px 0 14px;
+  }
+  .unitbar .n { font-family:'Mali',sans-serif; font-size:26px; }
+  .unitbar .t { font-size:19px; font-weight:700; }
+  .unitbar .th2 { font-size:16px; opacity:.92; }
+  .unitbar.u6 { background:linear-gradient(135deg,#6a1b9a,#ab47bc); }
+  .unitbar.u7 { background:linear-gradient(135deg,#e65100,#fb8c00); }
+  .newtag {
+    background:#ffd54f; color:#5d4037; border-radius:999px;
+    padding:2px 12px; font-size:14px; font-weight:700; margin-left:auto;
+  }
+</style>
 </head>
 <body class="math">
 
 <header class="site-head">
   <span class="unit">Mathematics • Primary 3</span>
-  <h1>UNIT 5: MULTIPLICATION</h1>
-  <p>การคูณ • Targeting Mathematics 3A</p>
+  <h1>คณิตศาสตร์ ป.3</h1>
+  <p>Unit 5 Multiplication · Unit 6 Lines · Unit 7 Time <span class="th">— Targeting Mathematics 3A &amp; 3B</span></p>
 </header>
 
 <div class="wrap">
 
   <div class="card">
-    <h2>🚜 Welcome to the Farm!</h2>
+    <h2>👋 เริ่มตรงนี้</h2>
     <p>
-      On the farm there are <b>2 groups of 3 calves</b>. How many calves altogether?
-      Instead of counting one by one, we can use <b>multiplication</b> — 2 × 3 = 6. Fast and easy!
-    </p>
-    <p class="th">
-      ที่ฟาร์มมีลูกวัว 2 กลุ่ม กลุ่มละ 3 ตัว ถ้าไม่อยากนับทีละตัว เราใช้ <b>การคูณ</b> ได้เลย 2 × 3 = 6 เร็วกว่าเยอะ!
+      เว็บนี้มี <b>3 หน่วยการเรียน</b> แต่ละหน่วยมีทั้ง<b>บทเรียน</b>ให้อ่าน และ<b>แบบฝึกหัด</b>ที่ตรวจให้ทันทีทุกข้อ
+      พร้อมบอกเหตุผลว่าทำไมถึงผิด
     </p>
     <div class="tip">
-      <b>How to use / วิธีใช้:</b> อ่านบทที่ 1–4 ตามลำดับ แล้วไปฝึกทำโจทย์ที่หน้า Practice
-      พิมพ์คำตอบแล้วกดตรวจ รู้ผลทันที ทำซ้ำได้ไม่จำกัดเพราะมีปุ่มสุ่มโจทย์ใหม่ให้ด้วย
+      <b>วิธีใช้:</b> อ่านบทเรียนตามลำดับก่อน → แล้วค่อยไปหน้า Practice →
+      สุดท้ายลอง Final Test เพื่อวัดว่าพร้อมสอบหรือยัง<br>
+      แบบฝึกหัดทำซ้ำได้ไม่จำกัด กด <b>รีเฟรชหน้า</b> ก็เริ่มใหม่ได้เลย
     </div>
   </div>
 
-  <div class="card">
-    <h2>🎯 Objectives</h2>
-    <ol>
-      <li>Multiplication facts of <b>6, 7, 8 and 9</b>. <span class="th">ท่องสูตรคูณแม่ 6 7 8 9 ได้</span></li>
-      <li>Multiply <b>2-digit</b> and <b>3-digit</b> by <b>1-digit</b> numbers. <span class="th">คูณเลข 2 หลักและ 3 หลัก ด้วยเลข 1 หลัก</span></li>
-      <li>Multiplication <b>without regrouping</b> and <b>with regrouping</b>. <span class="th">การคูณแบบไม่ทด และแบบมีการทด</span></li>
-      <li>Solve <b>word problems</b> using multiplication. <span class="th">แก้โจทย์ปัญหาด้วยการคูณ</span></li>
-    </ol>
+  <!-- ============ UNIT 5 ============ -->
+  <div class="unitbar">
+    <span class="n">5</span>
+    <span><span class="t">Multiplication</span><br><span class="th2">การคูณ • แม่ 6–9 • คูณแบบทดและไม่ทด • โจทย์ปัญหา</span></span>
   </div>
 
   <div class="menu">
@@ -47,35 +57,106 @@
       <b>1. What is Multiplication?</b>
       <span>Repeated addition, equal grouping, times tables 6–9<br><span class="th">การบวกซ้ำ • การจัดกลุ่ม • สูตรคูณแม่ 6–9</span></span>
     </a>
-    <a href="lesson2.html">
+    <a href="lesson2.html" class="b2">
       <span class="ico">🐑</span>
       <b>2. Without Regrouping</b>
       <span>2-digit &amp; 3-digit × 1-digit, no carrying<br><span class="th">คูณแบบไม่ต้องทด</span></span>
     </a>
-    <a href="lesson3.html">
+    <a href="lesson3.html" class="b3">
       <span class="ico">🐖</span>
       <b>3. With Regrouping</b>
       <span>Carrying tens and hundreds, step by step<br><span class="th">คูณแบบมีการทด ทีละขั้น</span></span>
     </a>
-    <a href="lesson4.html">
+    <a href="lesson4.html" class="b4">
       <span class="ico">🐴</span>
       <b>4. Word Problems</b>
       <span>Bar models, "times as many as", altogether<br><span class="th">โจทย์ปัญหา + แผนภาพแท่ง</span></span>
     </a>
     <a href="practice.html">
       <span class="ico">✏️</span>
-      <b>5. Practice — 150+ problems</b>
+      <b>5. Practice — 165 problems</b>
       <span>Every problem from the book + endless random drills<br><span class="th">โจทย์ครบทุกข้อจากหนังสือ + สุ่มโจทย์ใหม่ไม่จำกัด</span></span>
     </a>
-    <a href="quiz.html">
+    <a href="quiz.html" class="b3">
       <span class="ico">🏆</span>
       <b>6. Final Test</b>
       <span>20 mixed questions with instant answers<br><span class="th">ข้อสอบรวม 20 ข้อ เฉลยทันที</span></span>
     </a>
   </div>
 
-  <div class="card" style="margin-top:22px">
-    <h2>📖 Vocabulary</h2>
+  <!-- ============ UNIT 6 ============ -->
+  <div class="unitbar u6">
+    <span class="n">6</span>
+    <span><span class="t">Perpendicular, Parallel, Horizontal &amp; Vertical Lines</span><br>
+      <span class="th2">เส้นตั้งฉาก • เส้นคู่ขนาน • แนวนอน • แนวตั้ง</span></span>
+    <span class="newtag">ใหม่</span>
+  </div>
+
+  <div class="menu">
+    <a href="unit6.html" class="b4">
+      <span class="ico">📐</span>
+      <b>1. Lines — บทเรียน</b>
+      <span>Point · Segment · Ray · Angle · Line · Perpendicular ⊥ · Parallel ∥ · Horizontal · Vertical
+        <br><span class="th">รู้จักเส้นทุกแบบ พร้อมรูปประกอบทุกหัวข้อ</span></span>
+    </a>
+    <a href="unit6-practice.html" class="b2">
+      <span class="ico">✏️</span>
+      <b>2. Practice — 34 ข้อ</b>
+      <span>Name the figure · ✔✘ perpendicular · ✔✘ parallel · count lines
+        <br><span class="th">กดตอบ ✔ ✘ แบบเดียวกับสไลด์ในห้องเรียน</span></span>
+    </a>
+  </div>
+
+  <!-- ============ UNIT 7 ============ -->
+  <div class="unitbar u7">
+    <span class="n">7</span>
+    <span><span class="t">Time</span><br>
+      <span class="th2">อ่านนาฬิกา • แปลงเวลา • ช่วงเวลา • บวกลบเวลา</span></span>
+    <span class="newtag">ใหม่</span>
+  </div>
+
+  <div class="menu">
+    <a href="unit7-lesson1.html" class="b3">
+      <span class="ico">🕐</span>
+      <b>1. Telling Time to the Minute</b>
+      <span>Hour hand · minute hand · o’clock · half past · past / after / to / before
+        <br><span class="th">อ่านเวลาละเอียดถึงนาที มีนาฬิกาจริงให้ดูทุกตัวอย่าง</span></span>
+    </a>
+    <a href="unit7-lesson2.html" class="b2">
+      <span class="ico">🔄</span>
+      <b>2. Conversion of Time</b>
+      <span>Hours ➝ minutes · minutes ➝ hours
+        <br><span class="th">แปลงชั่วโมงเป็นนาที และนาทีเป็นชั่วโมง</span></span>
+    </a>
+    <a href="unit7-lesson3.html" class="b4">
+      <span class="ico">⏳</span>
+      <b>3. Duration of Time</b>
+      <span>A.M. / P.M. · how long · starting &amp; finishing time
+        <br><span class="th">A.M./P.M. • หาช่วงเวลา • หาเวลาเริ่มและเวลาจบ</span></span>
+    </a>
+    <a href="unit7-lesson4.html">
+      <span class="ico">➕</span>
+      <b>4. Add &amp; Subtract Time</b>
+      <span>Regrouping 60 min = 1 h · word problems
+        <br><span class="th">บวกลบเวลา มีทดและมียืม + โจทย์ปัญหา</span></span>
+    </a>
+    <a href="unit7-practice.html" class="b2">
+      <span class="ico">✏️</span>
+      <b>5. Practice — 40 ข้อ + ♾️</b>
+      <span>Read the clock · past/to · conversion · duration · add &amp; subtract
+        <br><span class="th">มีเครื่องสุ่มนาฬิกาให้ฝึกอ่านไม่จำกัด 4 ระดับ</span></span>
+    </a>
+    <a href="unit7-quiz.html" class="b3">
+      <span class="ico">🏆</span>
+      <b>6. Final Test — 20 ข้อ</b>
+      <span>Mixed questions from every lesson
+        <br><span class="th">ข้อสอบรวม เฉลยพร้อมวิธีคิดทันที</span></span>
+    </a>
+  </div>
+
+  <!-- ============ Vocabulary ============ -->
+  <div class="card" style="margin-top:26px">
+    <h2>📖 Vocabulary — Unit 5 Multiplication</h2>
     <table>
       <thead><tr><th>English</th><th>ภาษาไทย</th><th>ความหมาย</th></tr></thead>
       <tbody>
@@ -89,6 +170,40 @@
         <tr><td><b>Twice as many as</b></td><td>มากเป็นสองเท่า</td><td>คูณด้วย 2</td></tr>
         <tr><td><b>Three times as many as</b></td><td>มากเป็นสามเท่า</td><td>คูณด้วย 3</td></tr>
         <tr><td><b>Regrouping / carrying</b></td><td>การทด</td><td>ยกจำนวนที่เกิน 9 ไปหลักถัดไป</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:26px">📖 Vocabulary — Unit 6 Lines</h2>
+    <table>
+      <thead><tr><th>English</th><th>ภาษาไทย</th></tr></thead>
+      <tbody>
+        <tr><td><b>Point</b></td><td>จุด</td></tr>
+        <tr><td><b>Line</b></td><td>เส้น</td></tr>
+        <tr><td><b>Line segment</b></td><td>ส่วนของเส้นตรง</td></tr>
+        <tr><td><b>Ray</b></td><td>รังสี</td></tr>
+        <tr><td><b>Angle</b> / <b>Right angle</b></td><td>มุม / มุมฉาก</td></tr>
+        <tr><td><b>Perpendicular line</b> ⊥</td><td>เส้นตั้งฉาก</td></tr>
+        <tr><td><b>Parallel line</b> ∥</td><td>เส้นคู่ขนาน</td></tr>
+        <tr><td><b>meet / cross / intersect</b></td><td>พบกัน / ตัดกัน</td></tr>
+        <tr><td><b>Corner</b></td><td>มุม</td></tr>
+        <tr><td><b>Horizontal line</b> / <b>Vertical line</b></td><td>แนวนอน / แนวตั้ง</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:26px">📖 Vocabulary — Unit 7 Time</h2>
+    <table>
+      <thead><tr><th>English</th><th>ภาษาไทย</th></tr></thead>
+      <tbody>
+        <tr><td><b>Time</b> / <b>Hour</b> / <b>Minute</b></td><td>เวลา / ชั่วโมง / นาที</td></tr>
+        <tr><td><b>O’clock</b></td><td>นาฬิกาตรง</td></tr>
+        <tr><td><b>Half hour / half past</b></td><td>ครึ่งชั่วโมง / ครึ่ง</td></tr>
+        <tr><td><b>Quarter past / after</b></td><td>15 นาทีหลังจาก</td></tr>
+        <tr><td><b>Quarter to / before</b></td><td>อีก 15 นาทีจะถึง</td></tr>
+        <tr><td><b>Duration / How long</b></td><td>ช่วงเวลา / นานเท่าไร</td></tr>
+        <tr><td><b>Starts at</b> / <b>Ends at</b></td><td>เริ่มที่ / จบที่</td></tr>
+        <tr><td><b>Spend time</b></td><td>ใช้เวลา</td></tr>
+        <tr><td><b>Begin</b> / <b>Finish</b></td><td>เริ่มต้น / สิ้นสุด</td></tr>
+        <tr><td><b>Minutes later</b></td><td>นาทีต่อมา</td></tr>
       </tbody>
     </table>
   </div>
